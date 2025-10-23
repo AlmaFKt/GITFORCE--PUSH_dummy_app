@@ -1,37 +1,21 @@
-# Core AI & Orchestration
+# Core dependencies
 langchain==0.1.0
 langgraph==0.0.20
-langchain-anthropic==0.1.1
-anthropic==0.18.1
+openai==1.12.0
+python-dotenv==1.0.0
 
-# Vector Database & RAG
+# Data processing
+pandas==2.2.0
+numpy==1.26.3
+
+# Vector store & RAG
 chromadb==0.4.22
 sentence-transformers==2.3.1
 
-# BM25 for lexical search
-rank-bm25==0.2.2
-
-# Data Processing
-pandas==2.1.4
-numpy==1.26.3
-faker==22.0.0
-
-# Log Processing
-python-json-logger==2.0.7
-loguru==0.7.2
-
-# Visualization
-streamlit==1.30.0
-plotly==5.18.0
-rich==13.7.0
-
-# Database
-sqlite3  # Built-in with Python
-
-# Optional (for tracking)
-langsmith==0.0.77
-
 # Utilities
-python-dotenv==1.0.0
 pydantic==2.5.3
-tqdm==4.66.1
+rich==13.7.0
+httpx==0.26.0
+
+# Optional for metrics
+scikit-learn==1.4.0

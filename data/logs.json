@@ -1405,5 +1405,2805 @@
     "service": "inspection-api",
     "message": "Inspection INS002003: minor issues detected - tire_wear=moderate, paint_scratch=3",
     "raw": "[2025-10-23T17:44:30.795Z] WARNING [inspection-api] Inspection INS002003: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005000 price changed by 31% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005000 price changed by 31% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN935197 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [payment-gateway] Payment TXN935197 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005025 price changed by 24% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005025 price changed by 24% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001010 logged in from IP 187.247.96.114",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001010 logged in from IP 187.247.96.114"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001016 logged in from IP 187.44.141.121",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001016 logged in from IP 187.44.141.121"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005012 added to inventory: Honda Serie 3 2021, Price: $171298",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005012 added to inventory: Honda Serie 3 2021, Price: $171298"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005027 has low mileage data quality score: 0.54",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005027 has low mileage data quality score: 0.54"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002013 completed: overall_score=80/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002013 completed: overall_score=80/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN199655 declined: insufficient funds for user USR001000",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN199655 declined: insufficient funds for user USR001000"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005012 price changed by 20% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005012 price changed by 20% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN551853 declined: insufficient funds for user USR001002",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN551853 declined: insufficient funds for user USR001002"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005004 has low mileage data quality score: 0.68",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005004 has low mileage data quality score: 0.68"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005025",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005025"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005003 price changed by 23% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005003 price changed by 23% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Memory leak: inspection images for INS002002 not freed, 500MB consumed",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Memory leak: inspection images for INS002002 not freed, 500MB consumed"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005025: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005025: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002006: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002006: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001004: invalid token",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Failed to authenticate user USR001004: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN379399 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [payment-gateway] Payment TXN379399 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005003",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005003"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN981200 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN981200 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Sensitive data leak: credit card number logged in plaintext for transaction TXN287187",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Sensitive data leak: credit card number logged in plaintext for transaction TXN287187"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001011 logged in from IP 187.36.223.155",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001011 logged in from IP 187.36.223.155"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "AttributeError: 'NoneType' object has no attribute 'email' for user USR001004",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] AttributeError: 'NoneType' object has no attribute 'email' for user USR001004"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005015 final_price=-$8489 (base: $170027)",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Negative price calculated: VEH005015 final_price=-$8489 (base: $170027)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001005 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Suspicious activity: user USR001005 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN825869 declined: insufficient funds for user USR001003",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN825869 declined: insufficient funds for user USR001003"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001000, email=user9708@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001000, email=user9708@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005022 has low mileage data quality score: 0.48",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005022 has low mileage data quality score: 0.48"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 completed: overall_score=88/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002008 completed: overall_score=88/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN672904 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN672904 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005008 has low mileage data quality score: 0.61",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005008 has low mileage data quality score: 0.61"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN591215 for user USR001008, amount=$44424",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment initiated: TXN591215 for user USR001008, amount=$44424"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002002 started for vehicle VEH005015",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002002 started for vehicle VEH005015"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN235830 for user USR001011, amount=$114483",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment initiated: TXN235830 for user USR001011, amount=$114483"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Race condition: concurrent payment updates for TXN381377 caused data inconsistency",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Race condition: concurrent payment updates for TXN381377 caused data inconsistency"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005008: confidence=0.76",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005008: confidence=0.76"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005028 added to inventory: Chevrolet Corolla 2022, Price: $203587",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005028 added to inventory: Chevrolet Corolla 2022, Price: $203587"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001005 logged in from IP 187.10.144.62",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001005 logged in from IP 187.10.144.62"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Session leak: user USR001004 has 47 active sessions, max limit is 5",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Session leak: user USR001004 has 47 active sessions, max limit is 5"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001005 logged in from IP 187.70.54.19",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001005 logged in from IP 187.70.54.19"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005021: confidence=0.79",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005021: confidence=0.79"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005025: base=$252879, market_adjustment=-1%",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [pricing-engine] Calculating price for VEH005025: base=$252879, market_adjustment=-1%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001005 logged in from IP 187.127.129.165",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001005 logged in from IP 187.127.129.165"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001004, email=user4197@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001004, email=user4197@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005023: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005023: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005027: base=$409397, market_adjustment=1%",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [pricing-engine] Calculating price for VEH005027: base=$409397, market_adjustment=1%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002006 completed: overall_score=80/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002006 completed: overall_score=80/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005022 price changed by 35% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005022 price changed by 35% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005021 added to inventory: Audi Corolla 2018, Price: $162220",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005021 added to inventory: Audi Corolla 2018, Price: $162220"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "AttributeError: 'NoneType' object has no attribute 'email' for user USR001016",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] AttributeError: 'NoneType' object has no attribute 'email' for user USR001016"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005012",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN455426 for user USR001015, amount=$199375",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment initiated: TXN455426 for user USR001015, amount=$199375"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005015 final_price=-$12306 (base: $230943)",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Negative price calculated: VEH005015 final_price=-$12306 (base: $230943)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001002: invalid token",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Failed to authenticate user USR001002: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005007",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005007"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001019 logged in from IP 187.250.220.174",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001019 logged in from IP 187.250.220.174"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001001: invalid token",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Failed to authenticate user USR001001: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005028: base=$421674, market_adjustment=1%",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [pricing-engine] Calculating price for VEH005028: base=$421674, market_adjustment=1%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005011",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005011"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002002 completed: overall_score=67/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002002 completed: overall_score=67/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005027: confidence=0.94",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005027: confidence=0.94"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002014: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002014: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005009: confidence=0.89",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005009: confidence=0.89"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001000 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Suspicious activity: user USR001000 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005012 price changed by 20% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005012 price changed by 20% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005020 added to inventory: Ford Corolla 2023, Price: $220433",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005020 added to inventory: Ford Corolla 2023, Price: $220433"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN572191 for user USR001005, amount=$135440",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment initiated: TXN572191 for user USR001005, amount=$135440"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN713848 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [payment-gateway] Payment TXN713848 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Authentication bypass: user USR001014 accessed admin panel without proper permissions",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Authentication bypass: user USR001014 accessed admin panel without proper permissions"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002007 completed: overall_score=69/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002007 completed: overall_score=69/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN448541 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN448541 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001015, email=user5788@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001015, email=user5788@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Authentication bypass: user USR001019 accessed admin panel without proper permissions",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Authentication bypass: user USR001019 accessed admin panel without proper permissions"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005001: confidence=0.89",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005001: confidence=0.89"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "JSONDecodeError: malformed webhook response from payment provider for TXN965013",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] JSONDecodeError: malformed webhook response from payment provider for TXN965013"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005019: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005019: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002000 started for vehicle VEH005005",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002000 started for vehicle VEH005005"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001007 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Suspicious activity: user USR001007 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005005: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005005: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005015: confidence=0.80",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005015: confidence=0.80"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005025 price changed by 29% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005025 price changed by 29% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005026: confidence=0.84",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005026: confidence=0.84"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001011 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Suspicious activity: user USR001011 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002003 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inspection-api] Inspection INS002003 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001016 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [user-service] Suspicious activity: user USR001016 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001000, email=user4396@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001000, email=user4396@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002014 started for vehicle VEH005007",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002014 started for vehicle VEH005007"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN413885 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN413885 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005000 price changed by 15% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005000 price changed by 15% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005029 price changed by 26% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005029 price changed by 26% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001009 logged in from IP 187.205.249.37",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001009 logged in from IP 187.205.249.37"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN947968 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN947968 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN844425 declined: insufficient funds for user USR001011",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN844425 declined: insufficient funds for user USR001011"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002003: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002003: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005011",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005011"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Infinite loop detected in priceOptimization(): same price 231336 returned 1000+ times",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Infinite loop detected in priceOptimization(): same price 231336 returned 1000+ times"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN149559 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [payment-gateway] Payment TXN149559 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN715010 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN715010 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN646388 declined: insufficient funds for user USR001006",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN646388 declined: insufficient funds for user USR001006"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001003, email=user1372@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001003, email=user1372@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 started for vehicle VEH005013",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002008 started for vehicle VEH005013"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN981057 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN981057 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN678546 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN678546 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Infinite loop detected in priceOptimization(): same price 293652 returned 1000+ times",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Infinite loop detected in priceOptimization(): same price 293652 returned 1000+ times"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Score calculation error: INS002006 total=109 exceeds maximum of 100",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inspection-api] Score calculation error: INS002006 total=109 exceeds maximum of 100"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005029",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005029"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005024",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005024"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005000 added to inventory: Toyota Focus 2017, Price: $416294",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005000 added to inventory: Toyota Focus 2017, Price: $416294"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005017 added to inventory: Chevrolet Jetta 2017, Price: $151605",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Vehicle VEH005017 added to inventory: Chevrolet Jetta 2017, Price: $151605"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005011",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005011"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001013, email=user7484@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001013, email=user7484@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005015: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005015: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Double charge detected: TXN497100 processed twice for user USR001011, amount=$183682",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Double charge detected: TXN497100 processed twice for user USR001011, amount=$183682"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005001: base=$237552, market_adjustment=7%",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [pricing-engine] Calculating price for VEH005001: base=$237552, market_adjustment=7%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002014 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inspection-api] Inspection INS002014 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN218928 declined: insufficient funds for user USR001007",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN218928 declined: insufficient funds for user USR001007"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005013 has low mileage data quality score: 0.48",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005013 has low mileage data quality score: 0.48"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Memory leak detected: vehicle cache size exceeded 10GB, VEH005010 data not released",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Memory leak detected: vehicle cache size exceeded 10GB, VEH005010 data not released"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN194484 declined: insufficient funds for user USR001009",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [payment-gateway] Payment TXN194484 declined: insufficient funds for user USR001009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002009 completed: overall_score=79/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inspection-api] Inspection INS002009 completed: overall_score=79/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005026: confidence=0.88",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005026: confidence=0.88"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005008: base=$158467, market_adjustment=-4%",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [pricing-engine] Calculating price for VEH005008: base=$158467, market_adjustment=-4%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005005",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [inventory-service] Fetching vehicle details for VEH005005"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005022 price changed by 20% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005022 price changed by 20% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Authentication bypass: user USR001007 accessed admin panel without proper permissions",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [user-service] Authentication bypass: user USR001007 accessed admin panel without proper permissions"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005017: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005017: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005015 has low mileage data quality score: 0.58",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inventory-service] Vehicle VEH005015 has low mileage data quality score: 0.58"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002011: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [inspection-api] Inspection INS002011: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001019 logged in from IP 187.72.169.125",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001019 logged in from IP 187.72.169.125"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005003 final_price=-$9784 (base: $337268)",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Negative price calculated: VEH005003 final_price=-$9784 (base: $337268)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005007: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005007: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005004 price changed by 24% in 24h",
+    "raw": "[2025-10-23T19:34:12.857Z] WARNING [pricing-engine] Price volatility detected: VEH005004 price changed by 24% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001018, email=user9169@kavak.com",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User profile updated: USR001018, email=user9169@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005008: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.857Z] ERROR   [inventory-service] Failed to update vehicle VEH005008: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001013 logged in from IP 187.213.7.27",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [user-service] User USR001013 logged in from IP 187.213.7.27"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN776651 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.857Z] INFO    [payment-gateway] Payment TXN776651 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.857Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005025: confidence=0.77",
+    "raw": "[2025-10-23T19:34:12.857Z] DEBUG   [pricing-engine] ML model prediction for VEH005025: confidence=0.77"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005017 price changed by 22% in 24h",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Price volatility detected: VEH005017 price changed by 22% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001011, email=user6217@kavak.com",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [user-service] User profile updated: USR001011, email=user6217@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005028",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Fetching vehicle details for VEH005028"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005004: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [inventory-service] Failed to update vehicle VEH005004: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001007 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [user-service] Suspicious activity: user USR001007 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005024 price changed by 20% in 24h",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Price volatility detected: VEH005024 price changed by 20% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005003",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Fetching vehicle details for VEH005003"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002012 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [inspection-api] Inspection INS002012 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005011: Database connection timeout",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [inventory-service] Failed to update vehicle VEH005011: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001014, email=user6952@kavak.com",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [user-service] User profile updated: USR001014, email=user6952@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN929960 declined: insufficient funds for user USR001009",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Payment TXN929960 declined: insufficient funds for user USR001009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005014 added to inventory: Honda Serie 3 2017, Price: $434765",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Vehicle VEH005014 added to inventory: Honda Serie 3 2017, Price: $434765"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN375604 for user USR001003, amount=$161051",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN375604 for user USR001003, amount=$161051"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001004 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [user-service] Suspicious activity: user USR001004 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN338036 declined: insufficient funds for user USR001001",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Payment TXN338036 declined: insufficient funds for user USR001001"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN824864 for user USR001012, amount=$275350",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN824864 for user USR001012, amount=$275350"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [inspection-api] Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002011 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [inspection-api] Inspection INS002011 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN929952 for user USR001016, amount=$49029",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN929952 for user USR001016, amount=$49029"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001015 logged in from IP 187.43.147.54",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [user-service] User USR001015 logged in from IP 187.43.147.54"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN196568 declined: insufficient funds for user USR001015",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Payment TXN196568 declined: insufficient funds for user USR001015"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005016 added to inventory: BMW Focus 2020, Price: $321609",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Vehicle VEH005016 added to inventory: BMW Focus 2020, Price: $321609"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005004",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Fetching vehicle details for VEH005004"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005010 price changed by 15% in 24h",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Price volatility detected: VEH005010 price changed by 15% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002013 started for vehicle VEH005026",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inspection-api] Inspection INS002013 started for vehicle VEH005026"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN645188 declined: insufficient funds for user USR001010",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Payment TXN645188 declined: insufficient funds for user USR001010"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005003 has low mileage data quality score: 0.55",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [inventory-service] Vehicle VEH005003 has low mileage data quality score: 0.55"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN501628 declined: insufficient funds for user USR001019",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Payment TXN501628 declined: insufficient funds for user USR001019"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005026: confidence=0.88",
+    "raw": "[2025-10-23T19:34:12.858Z] DEBUG   [pricing-engine] ML model prediction for VEH005026: confidence=0.88"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005018 price changed by 32% in 24h",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Price volatility detected: VEH005018 price changed by 32% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN187919 for user USR001007, amount=$101297",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN187919 for user USR001007, amount=$101297"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005024",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [inventory-service] IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005024"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Double charge detected: TXN108505 processed twice for user USR001004, amount=$337948",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [payment-gateway] Double charge detected: TXN108505 processed twice for user USR001004, amount=$337948"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN842111 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [payment-gateway] Payment TXN842111 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005014",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Fetching vehicle details for VEH005014"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005022",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inventory-service] Fetching vehicle details for VEH005022"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001017, email=user4175@kavak.com",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [user-service] User profile updated: USR001017, email=user4175@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002000 started for vehicle VEH005015",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inspection-api] Inspection INS002000 started for vehicle VEH005015"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001007 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [user-service] Suspicious activity: user USR001007 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN514494 for user USR001018, amount=$198765",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN514494 for user USR001018, amount=$198765"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005016 price changed by 22% in 24h",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Price volatility detected: VEH005016 price changed by 22% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Infinite loop detected in priceOptimization(): same price 383017 returned 1000+ times",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [pricing-engine] Infinite loop detected in priceOptimization(): same price 383017 returned 1000+ times"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN422695 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:12.858Z] WARNING [payment-gateway] Payment TXN422695 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005017 final_price=-$11840 (base: $162561)",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [pricing-engine] Negative price calculated: VEH005017 final_price=-$11840 (base: $162561)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005024: base=$404177, market_adjustment=6%",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [pricing-engine] Calculating price for VEH005024: base=$404177, market_adjustment=6%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001012: invalid token",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [user-service] Failed to authenticate user USR001012: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN931653 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment TXN931653 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN660310 for user USR001007, amount=$461022",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN660310 for user USR001007, amount=$461022"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "DivisionByZeroError in calculateDepreciation(): age parameter is 0 for VEH005028",
+    "raw": "[2025-10-23T19:34:12.858Z] ERROR   [pricing-engine] DivisionByZeroError in calculateDepreciation(): age parameter is 0 for VEH005028"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005029: confidence=0.95",
+    "raw": "[2025-10-23T19:34:12.858Z] DEBUG   [pricing-engine] ML model prediction for VEH005029: confidence=0.95"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005014: base=$327473, market_adjustment=-2%",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [pricing-engine] Calculating price for VEH005014: base=$327473, market_adjustment=-2%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 started for vehicle VEH005023",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [inspection-api] Inspection INS002008 started for vehicle VEH005023"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN974596 for user USR001017, amount=$279027",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [payment-gateway] Payment initiated: TXN974596 for user USR001017, amount=$279027"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:12.858Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005025: base=$308989, market_adjustment=-1%",
+    "raw": "[2025-10-23T19:34:12.858Z] INFO    [pricing-engine] Calculating price for VEH005025: base=$308989, market_adjustment=-1%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005012 price changed by 31% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005012 price changed by 31% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002004: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002004: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN913334 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN913334 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN615135 for user USR001013, amount=$292705",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN615135 for user USR001013, amount=$292705"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005009: base=$194999, market_adjustment=8%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005009: base=$194999, market_adjustment=8%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005010 price changed by 15% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005010 price changed by 15% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005009",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001015: invalid token",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] Failed to authenticate user USR001015: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002001 completed: overall_score=97/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002001 completed: overall_score=97/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005008 final_price=-$11884 (base: $191031)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Negative price calculated: VEH005008 final_price=-$11884 (base: $191031)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005004 has low mileage data quality score: 0.40",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005004 has low mileage data quality score: 0.40"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Memory leak detected: vehicle cache size exceeded 10GB, VEH005015 data not released",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Memory leak detected: vehicle cache size exceeded 10GB, VEH005015 data not released"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005002 has low mileage data quality score: 0.45",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005002 has low mileage data quality score: 0.45"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001005 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [user-service] Suspicious activity: user USR001005 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001014, email=user3839@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001014, email=user3839@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN478933 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN478933 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN440845 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment TXN440845 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005014 price changed by 33% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005014 price changed by 33% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001000, email=user4294@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001000, email=user4294@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005001 has low mileage data quality score: 0.47",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005001 has low mileage data quality score: 0.47"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001018, email=user7726@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001018, email=user7726@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN928804 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment TXN928804 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002007 started for vehicle VEH005002",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002007 started for vehicle VEH005002"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002014: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002014: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "SQL Injection attempt detected in search query: \"' OR 1=1--\" for brand=Ford",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] SQL Injection attempt detected in search query: \"' OR 1=1--\" for brand=Ford"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN587626 declined: insufficient funds for user USR001004",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN587626 declined: insufficient funds for user USR001004"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002004: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002004: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001007, email=user5356@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001007, email=user5356@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005028 added to inventory: BMW Clase C 2022, Price: $317546",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005028 added to inventory: BMW Clase C 2022, Price: $317546"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005009 added to inventory: Honda Aveo 2017, Price: $449009",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005009 added to inventory: Honda Aveo 2017, Price: $449009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005002 added to inventory: Toyota Jetta 2020, Price: $322139",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005002 added to inventory: Toyota Jetta 2020, Price: $322139"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005018 price changed by 34% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005018 price changed by 34% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001008 logged in from IP 187.224.103.137",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001008 logged in from IP 187.224.103.137"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005000: confidence=0.91",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005000: confidence=0.91"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005014",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005014"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005004",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005004"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002014 completed: overall_score=72/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002014 completed: overall_score=72/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN440443 declined: insufficient funds for user USR001012",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN440443 declined: insufficient funds for user USR001012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002013 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Inspection INS002013 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Inspection INS002008 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Inspection INS002008 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005003 price changed by 18% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005003 price changed by 18% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005029: confidence=0.87",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005029: confidence=0.87"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002001 completed: overall_score=69/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002001 completed: overall_score=69/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "SQL Injection attempt detected in search query: \"' OR 1=1--\" for brand=Nissan",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] SQL Injection attempt detected in search query: \"' OR 1=1--\" for brand=Nissan"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005008: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005008: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN958521 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN958521 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN501705 for user USR001017, amount=$315808",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN501705 for user USR001017, amount=$315808"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN547158 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN547158 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005021 has low mileage data quality score: 0.67",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005021 has low mileage data quality score: 0.67"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002004 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Inspection INS002004 failed to upload images: S3 bucket access denied"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN864807 declined: insufficient funds for user USR001003",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN864807 declined: insufficient funds for user USR001003"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001016 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [user-service] Suspicious activity: user USR001016 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002012 completed: overall_score=92/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002012 completed: overall_score=92/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005005 has low mileage data quality score: 0.59",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005005 has low mileage data quality score: 0.59"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005022 has low mileage data quality score: 0.67",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005022 has low mileage data quality score: 0.67"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005010 added to inventory: Audi Mazda3 2019, Price: $184973",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005010 added to inventory: Audi Mazda3 2019, Price: $184973"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005011",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005011"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001002, email=user3677@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001002, email=user3677@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005008 has low mileage data quality score: 0.52",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005008 has low mileage data quality score: 0.52"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Sensitive data leak: credit card number logged in plaintext for transaction TXN460473",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Sensitive data leak: credit card number logged in plaintext for transaction TXN460473"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002013 started for vehicle VEH005008",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002013 started for vehicle VEH005008"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001001 logged in from IP 187.60.221.94",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001001 logged in from IP 187.60.221.94"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001004: invalid token",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] Failed to authenticate user USR001004: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002008: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002008: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN810626 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN810626 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005008: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005008: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001005: invalid token",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] Failed to authenticate user USR001005: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005008: base=$267751, market_adjustment=8%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005008: base=$267751, market_adjustment=8%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005004 final_price=-$5204 (base: $278626)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Negative price calculated: VEH005004 final_price=-$5204 (base: $278626)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN287234 declined: insufficient funds for user USR001010",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN287234 declined: insufficient funds for user USR001010"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "JSONDecodeError: malformed webhook response from payment provider for TXN434281",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] JSONDecodeError: malformed webhook response from payment provider for TXN434281"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "AttributeError: 'NoneType' object has no attribute 'email' for user USR001012",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] AttributeError: 'NoneType' object has no attribute 'email' for user USR001012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005020",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005020"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005011 has low mileage data quality score: 0.46",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005011 has low mileage data quality score: 0.46"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005024 has low mileage data quality score: 0.67",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005024 has low mileage data quality score: 0.67"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN797964 for user USR001002, amount=$158168",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN797964 for user USR001002, amount=$158168"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001005 logged in from IP 187.91.92.1",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001005 logged in from IP 187.91.92.1"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005021",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005021"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002013 completed: overall_score=79/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002013 completed: overall_score=79/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "SQL error: duplicate key violation when creating user USR001010 (user already exists)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] SQL error: duplicate key violation when creating user USR001010 (user already exists)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN593858 declined: insufficient funds for user USR001009",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN593858 declined: insufficient funds for user USR001009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005009",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002013: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002007 started for vehicle VEH005006",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002007 started for vehicle VEH005006"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Sensitive data leak: credit card number logged in plaintext for transaction TXN641926",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Sensitive data leak: credit card number logged in plaintext for transaction TXN641926"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "ArrayIndexError: inspection checklist item[25] does not exist for INS002008",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] ArrayIndexError: inspection checklist item[25] does not exist for INS002008"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN232099 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment TXN232099 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002002: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002002: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN590717 for user USR001015, amount=$125486",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN590717 for user USR001015, amount=$125486"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001014 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [user-service] Suspicious activity: user USR001014 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005029: confidence=0.88",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005029: confidence=0.88"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005003",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005003"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001015 logged in from IP 187.250.208.154",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001015 logged in from IP 187.250.208.154"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "NullPointerException in getVehiclePrice() for VEH005027: price field is null",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] NullPointerException in getVehiclePrice() for VEH005027: price field is null"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Score calculation error: INS002006 total=103 exceeds maximum of 100",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Score calculation error: INS002006 total=103 exceeds maximum of 100"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005028: confidence=0.90",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005028: confidence=0.90"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Score calculation error: INS002000 total=83 exceeds maximum of 100",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Score calculation error: INS002000 total=83 exceeds maximum of 100"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN222116 for user USR001000, amount=$465568",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN222116 for user USR001000, amount=$465568"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN326699 for user USR001000, amount=$106188",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment initiated: TXN326699 for user USR001000, amount=$106188"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001019 logged in from IP 187.63.125.176",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001019 logged in from IP 187.63.125.176"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN389742 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN389742 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002008 started for vehicle VEH005012",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002008 started for vehicle VEH005012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN264006 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment TXN264006 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "AttributeError: 'NoneType' object has no attribute 'email' for user USR001009",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] AttributeError: 'NoneType' object has no attribute 'email' for user USR001009"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005001 added to inventory: Chevrolet Sentra 2015, Price: $422386",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005001 added to inventory: Chevrolet Sentra 2015, Price: $422386"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005009: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005009: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment TXN340992 processed successfully via STRIPE",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [payment-gateway] Payment TXN340992 processed successfully via STRIPE"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005006",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005006"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005008: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005008: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005011: base=$189419, market_adjustment=10%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005011: base=$189419, market_adjustment=10%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005027: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005027: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005019",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] TypeError: cannot multiply 'NoneType' by float in applyDiscount() for VEH005019"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005005 added to inventory: Chevrolet Focus 2020, Price: $192161",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005005 added to inventory: Chevrolet Focus 2020, Price: $192161"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002005: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "SQL error: duplicate key violation when creating user USR001014 (user already exists)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] SQL error: duplicate key violation when creating user USR001014 (user already exists)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005027: base=$224433, market_adjustment=6%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005027: base=$224433, market_adjustment=6%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Race condition: concurrent payment updates for TXN608264 caused data inconsistency",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Race condition: concurrent payment updates for TXN608264 caused data inconsistency"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005026: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005026: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001008 logged in from IP 187.47.206.202",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001008 logged in from IP 187.47.206.202"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005021",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Fetching vehicle details for VEH005021"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005012",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005007 added to inventory: Ford Mazda3 2015, Price: $224591",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005007 added to inventory: Ford Mazda3 2015, Price: $224591"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN379364 declined: insufficient funds for user USR001018",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN379364 declined: insufficient funds for user USR001018"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN969903 declined: insufficient funds for user USR001007",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN969903 declined: insufficient funds for user USR001007"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002011 completed: overall_score=93/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002011 completed: overall_score=93/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN836083 declined: insufficient funds for user USR001005",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Payment TXN836083 declined: insufficient funds for user USR001005"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "DivisionByZeroError in calculateDepreciation(): age parameter is 0 for VEH005026",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] DivisionByZeroError in calculateDepreciation(): age parameter is 0 for VEH005026"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001006: invalid token",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [user-service] Failed to authenticate user USR001006: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005018 has low mileage data quality score: 0.53",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inventory-service] Vehicle VEH005018 has low mileage data quality score: 0.53"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Negative price calculated: VEH005006 final_price=-$13211 (base: $163961)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Negative price calculated: VEH005006 final_price=-$13211 (base: $163961)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002010 completed: overall_score=95/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002010 completed: overall_score=95/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005011: base=$274046, market_adjustment=-3%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005011: base=$274046, market_adjustment=-3%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005016 price changed by 34% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005016 price changed by 34% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005027 price changed by 24% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005027 price changed by 24% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005005: base=$442818, market_adjustment=3%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005005: base=$442818, market_adjustment=3%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005005: base=$306258, market_adjustment=6%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005005: base=$306258, market_adjustment=6%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "ArrayIndexError: inspection checklist item[25] does not exist for INS002004",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] ArrayIndexError: inspection checklist item[25] does not exist for INS002004"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001005, email=user3829@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001005, email=user3829@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001018, email=user8298@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001018, email=user8298@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001019 logged in from IP 187.7.226.51",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001019 logged in from IP 187.7.226.51"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005026: base=$317954, market_adjustment=7%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005026: base=$317954, market_adjustment=7%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Session leak: user USR001019 has 47 active sessions, max limit is 5",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [user-service] Session leak: user USR001019 has 47 active sessions, max limit is 5"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005017: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005017: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001002 logged in from IP 187.179.242.17",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001002 logged in from IP 187.179.242.17"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005026 added to inventory: Mazda Serie 3 2018, Price: $280469",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inventory-service] Vehicle VEH005026 added to inventory: Mazda Serie 3 2018, Price: $280469"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005026: confidence=0.75",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005026: confidence=0.75"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "pricing-engine",
+    "message": "Calculating price for VEH005025: base=$344804, market_adjustment=-2%",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [pricing-engine] Calculating price for VEH005025: base=$344804, market_adjustment=-2%"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001019, email=user3293@kavak.com",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User profile updated: USR001019, email=user3293@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005026: confidence=0.82",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005026: confidence=0.82"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "payment-gateway",
+    "message": "Payment TXN319972 flagged for manual review: high-risk transaction",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [payment-gateway] Payment TXN319972 flagged for manual review: high-risk transaction"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Memory leak: inspection images for INS002013 not freed, 500MB consumed",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Memory leak: inspection images for INS002013 not freed, 500MB consumed"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002010: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [inspection-api] Inspection INS002010: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002007 completed: overall_score=72/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [inspection-api] Inspection INS002007 completed: overall_score=72/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001018 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [user-service] Suspicious activity: user USR001018 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "Failed to update vehicle VEH005019: Database connection timeout",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] Failed to update vehicle VEH005019: Database connection timeout"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Infinite loop detected in priceOptimization(): same price 276803 returned 1000+ times",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Infinite loop detected in priceOptimization(): same price 276803 returned 1000+ times"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005004: confidence=0.83",
+    "raw": "[2025-10-23T19:34:42.031Z] DEBUG   [pricing-engine] ML model prediction for VEH005004: confidence=0.83"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001007 logged in from IP 187.158.167.8",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001007 logged in from IP 187.158.167.8"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Deadlock detected: inspection INS002010 waiting for vehicle VEH005001 lock (timeout 300s)",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inspection-api] Deadlock detected: inspection INS002010 waiting for vehicle VEH005001 lock (timeout 300s)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001017 logged in from IP 187.103.215.168",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001017 logged in from IP 187.103.215.168"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005018 price changed by 21% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005018 price changed by 21% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Double charge detected: TXN905774 processed twice for user USR001008, amount=$76568",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Double charge detected: TXN905774 processed twice for user USR001008, amount=$76568"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Sensitive data leak: credit card number logged in plaintext for transaction TXN981464",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [payment-gateway] Sensitive data leak: credit card number logged in plaintext for transaction TXN981464"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001016 logged in from IP 187.22.194.109",
+    "raw": "[2025-10-23T19:34:42.031Z] INFO    [user-service] User USR001016 logged in from IP 187.22.194.109"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "NullPointerException in getVehiclePrice() for VEH005016: price field is null",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] NullPointerException in getVehiclePrice() for VEH005016: price field is null"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005028 price changed by 27% in 24h",
+    "raw": "[2025-10-23T19:34:42.031Z] WARNING [pricing-engine] Price volatility detected: VEH005028 price changed by 27% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.031Z",
+    "level": "ERROR",
+    "service": "inventory-service",
+    "message": "IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005008",
+    "raw": "[2025-10-23T19:34:42.031Z] ERROR   [inventory-service] IndexOutOfBoundsException: trying to access image[5] but only 3 images available for VEH005008"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "payment-gateway",
+    "message": "Payment initiated: TXN190433 for user USR001001, amount=$400079",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [payment-gateway] Payment initiated: TXN190433 for user USR001001, amount=$400079"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002011: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.032Z] WARNING [inspection-api] Inspection INS002011: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Fetching vehicle details for VEH005020",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [inventory-service] Fetching vehicle details for VEH005020"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001014, email=user2644@kavak.com",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [user-service] User profile updated: USR001014, email=user2644@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005002 added to inventory: Toyota Aveo 2022, Price: $328840",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [inventory-service] Vehicle VEH005002 added to inventory: Toyota Aveo 2022, Price: $328840"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Double charge detected: TXN720633 processed twice for user USR001010, amount=$152697",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [payment-gateway] Double charge detected: TXN720633 processed twice for user USR001010, amount=$152697"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "WARNING",
+    "service": "pricing-engine",
+    "message": "Price volatility detected: VEH005018 price changed by 34% in 24h",
+    "raw": "[2025-10-23T19:34:42.032Z] WARNING [pricing-engine] Price volatility detected: VEH005018 price changed by 34% in 24h"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005009 added to inventory: BMW Clase C 2016, Price: $358581",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [inventory-service] Vehicle VEH005009 added to inventory: BMW Clase C 2016, Price: $358581"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "inspection-api",
+    "message": "Inspection INS002012 completed: overall_score=85/100, status=APPROVED",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [inspection-api] Inspection INS002012 completed: overall_score=85/100, status=APPROVED"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "DEBUG",
+    "service": "pricing-engine",
+    "message": "ML model prediction for VEH005025: confidence=0.77",
+    "raw": "[2025-10-23T19:34:42.032Z] DEBUG   [pricing-engine] ML model prediction for VEH005025: confidence=0.77"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "SQL error: duplicate key violation when creating user USR001019 (user already exists)",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [user-service] SQL error: duplicate key violation when creating user USR001019 (user already exists)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "WARNING",
+    "service": "inspection-api",
+    "message": "Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3",
+    "raw": "[2025-10-23T19:34:42.032Z] WARNING [inspection-api] Inspection INS002000: minor issues detected - tire_wear=moderate, paint_scratch=3"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User USR001016 logged in from IP 187.217.81.56",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [user-service] User USR001016 logged in from IP 187.217.81.56"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "pricing-engine",
+    "message": "Failed to fetch market data for pricing: API timeout after 30s",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [pricing-engine] Failed to fetch market data for pricing: API timeout after 30s"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "payment-gateway",
+    "message": "Payment TXN969556 declined: insufficient funds for user USR001012",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [payment-gateway] Payment TXN969556 declined: insufficient funds for user USR001012"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "Failed to authenticate user USR001007: invalid token",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [user-service] Failed to authenticate user USR001007: invalid token"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "inventory-service",
+    "message": "Vehicle VEH005000 added to inventory: Mercedes-Benz Corolla 2020, Price: $407065",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [inventory-service] Vehicle VEH005000 added to inventory: Mercedes-Benz Corolla 2020, Price: $407065"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "WARNING",
+    "service": "user-service",
+    "message": "Suspicious activity: user USR001009 attempted 5 logins in 2 minutes",
+    "raw": "[2025-10-23T19:34:42.032Z] WARNING [user-service] Suspicious activity: user USR001009 attempted 5 logins in 2 minutes"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "INFO",
+    "service": "user-service",
+    "message": "User profile updated: USR001009, email=user3653@kavak.com",
+    "raw": "[2025-10-23T19:34:42.032Z] INFO    [user-service] User profile updated: USR001009, email=user3653@kavak.com"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "user-service",
+    "message": "SQL error: duplicate key violation when creating user USR001000 (user already exists)",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [user-service] SQL error: duplicate key violation when creating user USR001000 (user already exists)"
+  },
+  {
+    "timestamp": "2025-10-23T19:34:42.032Z",
+    "level": "ERROR",
+    "service": "inspection-api",
+    "message": "Inspection INS002006 failed to upload images: S3 bucket access denied",
+    "raw": "[2025-10-23T19:34:42.032Z] ERROR   [inspection-api] Inspection INS002006 failed to upload images: S3 bucket access denied"
   }
 ]

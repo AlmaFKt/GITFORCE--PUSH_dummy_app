@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kavak Log Generator</title>
+    <title>Kavak - Compra y vende autos seminuevos</title>
     <style>
         * {
             margin: 0;
@@ -12,449 +12,1055 @@
         }
 
         body {
-            font-family: 'Monaco', 'Courier New', monospace;
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(180deg, #f6f7f8 0%, #eef2f4 100%);
+            min-height: 100vh;
         }
 
-        .container {
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .header {
-            background: #2d2d30;
-            padding: 20px;
-            border-radius: 8px 8px 0 0;
-            border-bottom: 3px solid #007acc;
-        }
-
-        h1 {
-            color: #4ec9b0;
-            font-size: 24px;
-        }
-
-        .controls {
-            background: #252526;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .control-group {
+            padding: 0 20px;
             display: flex;
-            flex-direction: column;
-            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        label {
-            color: #9cdcfe;
-            font-size: 12px;
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: #000; /* Kavak icon/name in black */
+            letter-spacing: -1px;
         }
 
-        input, select {
-            background: #3c3c3c;
-            border: 1px solid #555;
-            color: #d4d4d4;
-            padding: 8px;
-            border-radius: 4px;
-            font-family: inherit;
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
         }
 
-        button {
-            background: #007acc;
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00d4aa;
+            transform: translateY(-2px);
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a88f 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0b533b 0%, #084733 60%, #062a4f 100%); /* dark green to navy */
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 12px;
+            border-radius: 60px;
+            display: flex;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+
+        .search-box:focus-within {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 18px 25px;
+            font-size: 17px;
+            outline: none;
+            background: transparent;
+        }
+
+        .search-box button {
+            background: linear-gradient(135deg, #0b533b 0%, #1f8a5f 100%); /* green button */
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 700;
             cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s;
+            transition: all 0.3s;
         }
 
-        button:hover {
-            background: #005a9e;
+        .search-box button:hover {
+            transform: scale(1.05);
         }
 
-        .log-output {
-            background: #1e1e1e;
-            border: 1px solid #555;
-            padding: 20px;
-            height: 500px;
-            overflow-y: auto;
-            font-size: 12px;
-            line-height: 1.6;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .log-line {
-            margin-bottom: 4px;
-            white-space: pre-wrap;
-        }
-
-        .log-info { color: #4fc1ff; }
-        .log-warning { color: #dcdcaa; }
-        .log-error { color: #f48771; }
-        .log-debug { color: #608b4e; }
-        .log-timestamp { color: #858585; }
-        .log-service { color: #4ec9b0; }
-
-        .stats {
-            background: #2d2d30;
-            padding: 15px;
-            margin-top: 20px;
-            border-radius: 8px;
+        /* Stats Bar */
+        .stats-bar {
+            background: #ffffff;
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            margin: -30px auto 40px;
+            max-width: 1100px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 10;
         }
 
-        .stat {
+        .stat-item {
             text-align: center;
+            padding: 10px;
         }
 
-        .stat-value {
-            font-size: 24px;
-            font-weight: bold;
-            color: #4ec9b0;
+        .stat-number {
+            font-size: 36px;
+            font-weight: 900;
+            color: #0b533b; /* dark green numbers */
         }
 
         .stat-label {
-            font-size: 11px;
-            color: #858585;
+            font-size: 14px;
+            color: #666;
             margin-top: 5px;
+            font-weight: 600;
         }
 
-        .button-group {
+        /* Vehicle Grid */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .filters {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .filter-item {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .filter-item label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #444;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-item select, .filter-item input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .filter-item select:focus, .filter-item input:focus {
+            outline: none;
+            border-color: #0b533b;
+            box-shadow: 0 0 0 3px rgba(11, 83, 59, 0.08);
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+            gap: 30px;
+        }
+
+        /* Minimal vehicle card */
+        .vehicle-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: box-shadow 0.18s ease, transform 0.18s ease;
+            cursor: pointer;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 12px 14px;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        /* hide decorative badge for minimal look */
+        .badge { display: none; }
+
+        .vehicle-image {
+            width: 120px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 0 0 120px;
+            background: #f4f6f2; /* soft neutral */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b533b; /* icon color */
+        }
+
+        .vehicle-image svg { width: 68px; height: 44px; display:block; }
+
+        .vehicle-info {
+            padding: 0;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .vehicle-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #111;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .vehicle-details {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .detail-item { display:flex; gap:6px; align-items:center; }
+
+        .vehicle-price {
+            font-size: 15px;
+            font-weight: 800;
+            color: #00a88f;
+        }
+
+        .btn-view {
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.08);
+            color: #333;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .btn-view:hover {
+            background: rgba(0,0,0,0.02);
+            transform: none;
+        }
+
+        /* Loading State */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Admin Panel */
+        .admin-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(6, 42, 79, 0.18);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+
+        .admin-toggle:hover {
+            transform: scale(1.1) rotate(180deg);
+        }
+
+        .admin-panel {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 450px;
+            max-height: 600px;
+            background: #0f1720; /* dark slate */
+            color: #d4d4d4;
+            border-radius: 16px;
+            box-shadow: 0 15px 60px rgba(0,0,0,0.6);
+            display: none;
+            flex-direction: column;
+            z-index: 999;
+            font-family: 'Monaco', 'Courier New', monospace;
+            overflow: hidden;
+        }
+
+        .admin-panel.active {
+            display: flex;
+            animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #062a4f 0%, #0b533b 100%); /* navy -> green accent */
+            padding: 20px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .admin-header h3 {
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .admin-logs {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        .log-entry {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #252526;
+            border-radius: 6px;
+            border-left: 3px solid #00d4aa;
+            transition: all 0.3s;
+        }
+
+        .log-entry:hover {
+            background: #2d2d30;
+        }
+
+        .log-entry.error {
+            border-left-color: #f48771;
+            background: rgba(244, 135, 113, 0.1);
+        }
+
+        .log-entry.warning {
+            border-left-color: #dcdcaa;
+            background: rgba(220, 220, 170, 0.1);
+        }
+
+        .log-timestamp {
+            color: #858585;
+            font-size: 10px;
+            margin-bottom: 4px;
+        }
+
+        .admin-footer {
+            padding: 15px;
+            background: #2d2d30;
+            border-top: 1px solid #3d3d3d;
             display: flex;
             gap: 10px;
-            grid-column: 1 / -1;
         }
 
-        .button-group button {
+        .admin-footer button {
             flex: 1;
+            padding: 10px;
+            background: linear-gradient(135deg, #062a4f 0%, #0b533b 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .admin-footer button:hover {
+            transform: translateY(-2px);
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 15px;
+            background: #0f1720;
+        }
+
+        .stat-mini {
+            text-align: center;
+            padding: 10px;
+            background: #2d2d30;
+            border-radius: 8px;
+        }
+
+        .stat-mini-value {
+            font-size: 20px;
+            font-weight: 900;
+            color: #1f8a5f; /* lighter green accent */
+        }
+
+        .stat-mini-label {
+            font-size: 9px;
+            color: #858585;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Error Toast */
+        .error-toast {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            background: #0b533b;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(244, 135, 113, 0.4);
+            display: none;
+            z-index: 10000;
+            animation: slideIn 0.3s;
+        }
+
+        .error-toast.show {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🚗 Kavak Log Generator</h1>
-            <p style="color: #858585; margin-top: 5px;">Generate realistic automotive marketplace logs with bugs for analysis</p>
-        </div>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
 
-        <div class="controls">
-            <div class="control-group">
-                <label>Log Lines to Generate</label>
-                <input type="number" id="logCount" value="50" min="10" max="500">
-            </div>
+    <!-- Error Toast -->
+    <div class="error-toast" id="errorToast"></div>
 
-            <div class="control-group">
-                <label>Bug Frequency (%)</label>
-                <input type="number" id="bugFrequency" value="15" min="0" max="50">
-            </div>
-
-            <div class="control-group">
-                <label>Service Type</label>
-                <select id="serviceType">
-                    <option value="all">All Services</option>
-                    <option value="inventory">Inventory Service</option>
-                    <option value="pricing">Pricing Engine</option>
-                    <option value="payment">Payment Gateway</option>
-                    <option value="inspection">Inspection API</option>
-                    <option value="user">User Service</option>
-                </select>
-            </div>
-
-            <div class="control-group">
-                <label>Log Level</label>
-                <select id="logLevel">
-                    <option value="all">All Levels</option>
-                    <option value="info">INFO</option>
-                    <option value="warning">WARNING</option>
-                    <option value="error">ERROR</option>
-                    <option value="debug">DEBUG</option>
-                </select>
-            </div>
-
-            <div class="button-group">
-                <button onclick="generateLogs()">Generate Logs</button>
-                <button onclick="downloadLogs()">Download Logs</button>
-                <button onclick="clearLogs()">Clear</button>
-            </div>
-        </div>
-
-        <div class="log-output" id="logOutput"></div>
-
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-value" id="totalLogs">0</div>
-                <div class="stat-label">TOTAL LOGS</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="errorCount">0</div>
-                <div class="stat-label">ERRORS</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="warningCount">0</div>
-                <div class="stat-label">WARNINGS</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="bugCount">0</div>
-                <div class="stat-label">BUGS INJECTED</div>
+    <!-- Header -->
+    <div class="header">
+        <div class="nav-container">
+            <a class="logo" href="index.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logo');">KAVAK</a>
+            <div class="nav-links">
+                <a href="comprar.html" onclick="logAction('navigation','click_comprar')">Comprar</a>
+                <a href="vender.html" onclick="logAction('navigation','click_vender')">Vender</a>
+                <a href="#" onclick="logAction('navigation', 'click_financiamiento'); return false;">Financiamiento</a>
+                <a href="#" onclick="logAction('navigation', 'click_ayuda'); return false;">Ayuda</a>
+                <a class="btn-login" href="login.html" onclick="logAction('navigation','click_login');">Ingresar</a>
             </div>
         </div>
     </div>
 
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Encuentra tu auto ideal</h1>
+            <p>Miles de autos seminuevos certificados listos para ti</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Busca por marca, modelo o año..." oninput="logAction('search', 'typing', this.value)">
+                <button onclick="performSearch()">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-number">15,000+</div>
+            <div class="stat-label">Autos Disponibles</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Satisfacción</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">200+</div>
+            <div class="stat-label">Puntos de Venta</div>
+        </div>
+    </div>
+
+    <!-- Filters and Vehicle Grid -->
+    <div class="container">
+        <div class="filters">
+            <div class="filter-item">
+                <label>Marca</label>
+                <select id="brandFilter" onchange="applyFilters()">
+                    <option value="">Todas las marcas</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label>Precio máximo</label>
+                <input type="number" id="priceFilter" placeholder="Ej: 450000" onchange="applyFilters()">
+            </div>
+            <div class="filter-item">
+                <label>Año</label>
+                <select id="yearFilter" onchange="applyFilters()">
+                    <option value="">Todos los años</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="vehicle-grid" id="vehicleGrid"></div>
+    </div>
+
+    <!-- Admin Panel Toggle -->
+    <button class="admin-toggle" onclick="toggleAdminPanel()">📊</button>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3>🔍 System Logs Monitor</h3>
+        </div>
+        <div class="admin-stats">
+            <div class="stat-mini">
+                <div class="stat-mini-value" id="totalEvents">0</div>
+                <div class="stat-mini-label">Events</div>
+            </div>
+            <div class="stat-mini">
+                <div class="stat-mini-value" id="errorEvents">0</div>
+                <div class="stat-mini-label">Errors</div>
+            </div>
+            <div class="stat-mini">
+                <div class="stat-mini-value" id="userActions">0</div>
+                <div class="stat-mini-label">Actions</div>
+            </div>
+        </div>
+        <div class="admin-logs" id="adminLogs"></div>
+        <div class="admin-footer">
+            <button onclick="downloadLogs()">Download</button>
+            <button onclick="clearLogs()">Clear</button>
+        </div>
+    </div>
+
     <script>
-        let allLogs = [];
-        let stats = { total: 0, errors: 0, warnings: 0, bugs: 0 };
+        // Logging System
+        let systemLogs = [];
+        let logStats = { total: 0, errors: 0, actions: 0 };
+        let sessionId = `SESSION_${Date.now()}`;
+        let userId = `USR${String(Math.floor(Math.random() * 9000) + 1000).padStart(6, '0')}`;
 
-        const services = ['inventory-service', 'pricing-engine', 'payment-gateway', 'inspection-api', 'user-service'];
-        
-        const carBrands = ['Toyota', 'Honda', 'Nissan', 'Chevrolet', 'Ford', 'Volkswagen', 'BMW', 'Mercedes-Benz', 'Audi', 'Mazda'];
-        const carModels = ['Corolla', 'Civic', 'Sentra', 'Aveo', 'Focus', 'Jetta', 'Serie 3', 'Clase C', 'A4', 'Mazda3'];
-        
-        const userIds = Array.from({length: 20}, (_, i) => `USR${String(i + 1000).padStart(6, '0')}`);
-        const vehicleIds = Array.from({length: 30}, (_, i) => `VEH${String(i + 5000).padStart(6, '0')}`);
-        const inspectionIds = Array.from({length: 15}, (_, i) => `INS${String(i + 2000).padStart(6, '0')}`);
+        const vehicles = [
+            { id: 'VEH005000', brand: 'Toyota', model: 'Corolla', year: 2020, price: 285000, mileage: 45000, badge: 'Certificado' },
+            { id: 'VEH005001', brand: 'Honda', model: 'Civic', year: 2021, price: 320000, mileage: 32000, badge: 'Recién llegado' },
+            { id: 'VEH005002', brand: 'Nissan', model: 'Sentra', year: 2022, price: 295000, mileage: 18000, badge: 'Popular' },
+            { id: 'VEH005003', brand: 'Chevrolet', model: 'Aveo', year: 2019, price: 185000, mileage: 62000, badge: 'Oferta' },
+            { id: 'VEH005004', brand: 'Ford', model: 'Focus', year: 2020, price: 245000, mileage: 51000, badge: 'Garantía+' },
+            { id: 'VEH005005', brand: 'Volkswagen', model: 'Jetta', year: 2021, price: 310000, mileage: 28000, badge: 'Premium' },
+            { id: 'VEH005006', brand: 'Toyota', model: 'Camry', year: 2022, price: 385000, mileage: 15000, badge: 'Top ventas' },
+            { id: 'VEH005007', brand: 'Honda', model: 'Accord', year: 2020, price: 325000, mileage: 42000, badge: 'Certificado' },
+            { id: 'VEH005008', brand: 'Nissan', model: 'Versa', year: 2021, price: 235000, mileage: 35000, badge: 'Eco' },
+        ];
 
-        function getTimestamp() {
-            const now = new Date();
-            return now.toISOString();
+        function showLoading() {
+            document.getElementById('loadingOverlay').classList.add('active');
         }
 
-        function randomChoice(arr) {
-            return arr[Math.floor(Math.random() * arr.length)];
+        function hideLoading() {
+            document.getElementById('loadingOverlay').classList.remove('active');
         }
 
-        function randomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        function showErrorToast(message) {
+            const toast = document.getElementById('errorToast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 4000);
         }
 
-        function shouldInjectBug() {
-            const bugFreq = parseInt(document.getElementById('bugFrequency').value);
-            return Math.random() * 100 < bugFreq;
-        }
-
-        function generateInventoryLog(level, hasBug) {
-            const vehicleId = randomChoice(vehicleIds);
-            const brand = randomChoice(carBrands);
-            const model = randomChoice(carModels);
-            const year = randomInt(2015, 2023);
-            const price = randomInt(150000, 450000);
-
-            const logs = [
-                { level: 'info', msg: `Vehicle ${vehicleId} added to inventory: ${brand} ${model} ${year}, Price: $${price}` },
-                { level: 'info', msg: `Fetching vehicle details for ${vehicleId}` },
-                { level: 'warning', msg: `Vehicle ${vehicleId} has low mileage data quality score: 0.${randomInt(40, 69)}` },
-                { level: 'error', msg: `Failed to update vehicle ${vehicleId}: Database connection timeout` },
-            ];
-
-            if (hasBug) {
-                const bugLogs = [
-                    { level: 'error', msg: `NullPointerException in getVehiclePrice() for ${vehicleId}: price field is null` },
-                    { level: 'error', msg: `IndexOutOfBoundsException: trying to access image[5] but only 3 images available for ${vehicleId}` },
-                    { level: 'warning', msg: `Memory leak detected: vehicle cache size exceeded 10GB, ${vehicleId} data not released` },
-                    { level: 'error', msg: `SQL Injection attempt detected in search query: "' OR 1=1--" for brand=${brand}` },
-                ];
-                return randomChoice(bugLogs);
-            }
-
-            return level === 'all' ? randomChoice(logs) : logs.find(l => l.level === level) || logs[0];
-        }
-
-        function generatePricingLog(level, hasBug) {
-            const vehicleId = randomChoice(vehicleIds);
-            const basePrice = randomInt(150000, 450000);
-            const finalPrice = basePrice + randomInt(-20000, 30000);
-
-            const logs = [
-                { level: 'info', msg: `Calculating price for ${vehicleId}: base=$${basePrice}, market_adjustment=${randomInt(-5, 10)}%` },
-                { level: 'debug', msg: `ML model prediction for ${vehicleId}: confidence=0.${randomInt(75, 95)}` },
-                { level: 'warning', msg: `Price volatility detected: ${vehicleId} price changed by ${randomInt(15, 35)}% in 24h` },
-                { level: 'error', msg: `Failed to fetch market data for pricing: API timeout after 30s` },
-            ];
-
-            if (hasBug) {
-                const bugLogs = [
-                    { level: 'error', msg: `DivisionByZeroError in calculateDepreciation(): age parameter is 0 for ${vehicleId}` },
-                    { level: 'error', msg: `Negative price calculated: ${vehicleId} final_price=-$${randomInt(5000, 15000)} (base: $${basePrice})` },
-                    { level: 'error', msg: `TypeError: cannot multiply 'NoneType' by float in applyDiscount() for ${vehicleId}` },
-                    { level: 'warning', msg: `Infinite loop detected in priceOptimization(): same price ${finalPrice} returned 1000+ times` },
-                ];
-                return randomChoice(bugLogs);
-            }
-
-            return level === 'all' ? randomChoice(logs) : logs.find(l => l.level === level) || logs[0];
-        }
-
-        function generatePaymentLog(level, hasBug) {
-            const userId = randomChoice(userIds);
-            const amount = randomInt(10000, 500000);
-            const transactionId = `TXN${randomInt(100000, 999999)}`;
-
-            const logs = [
-                { level: 'info', msg: `Payment initiated: ${transactionId} for user ${userId}, amount=$${amount}` },
-                { level: 'info', msg: `Payment ${transactionId} processed successfully via STRIPE` },
-                { level: 'warning', msg: `Payment ${transactionId} flagged for manual review: high-risk transaction` },
-                { level: 'error', msg: `Payment ${transactionId} declined: insufficient funds for user ${userId}` },
-            ];
-
-            if (hasBug) {
-                const bugLogs = [
-                    { level: 'error', msg: `Double charge detected: ${transactionId} processed twice for user ${userId}, amount=$${amount}` },
-                    { level: 'error', msg: `JSONDecodeError: malformed webhook response from payment provider for ${transactionId}` },
-                    { level: 'error', msg: `Race condition: concurrent payment updates for ${transactionId} caused data inconsistency` },
-                    { level: 'error', msg: `Sensitive data leak: credit card number logged in plaintext for transaction ${transactionId}` },
-                ];
-                return randomChoice(bugLogs);
-            }
-
-            return level === 'all' ? randomChoice(logs) : logs.find(l => l.level === level) || logs[0];
-        }
-
-        function generateInspectionLog(level, hasBug) {
-            const vehicleId = randomChoice(vehicleIds);
-            const inspectionId = randomChoice(inspectionIds);
-            const score = randomInt(65, 98);
-
-            const logs = [
-                { level: 'info', msg: `Inspection ${inspectionId} started for vehicle ${vehicleId}` },
-                { level: 'info', msg: `Inspection ${inspectionId} completed: overall_score=${score}/100, status=APPROVED` },
-                { level: 'warning', msg: `Inspection ${inspectionId}: minor issues detected - tire_wear=moderate, paint_scratch=3` },
-                { level: 'error', msg: `Inspection ${inspectionId} failed to upload images: S3 bucket access denied` },
-            ];
-
-            if (hasBug) {
-                const bugLogs = [
-                    { level: 'error', msg: `ArrayIndexError: inspection checklist item[25] does not exist for ${inspectionId}` },
-                    { level: 'error', msg: `Score calculation error: ${inspectionId} total=${score + 15} exceeds maximum of 100` },
-                    { level: 'warning', msg: `Memory leak: inspection images for ${inspectionId} not freed, 500MB consumed` },
-                    { level: 'error', msg: `Deadlock detected: inspection ${inspectionId} waiting for vehicle ${vehicleId} lock (timeout 300s)` },
-                ];
-                return randomChoice(bugLogs);
-            }
-
-            return level === 'all' ? randomChoice(logs) : logs.find(l => l.level === level) || logs[0];
-        }
-
-        function generateUserLog(level, hasBug) {
-            const userId = randomChoice(userIds);
-            const email = `user${randomInt(1000, 9999)}@kavak.com`;
-
-            const logs = [
-                { level: 'info', msg: `User ${userId} logged in from IP 187.${randomInt(1, 255)}.${randomInt(1, 255)}.${randomInt(1, 255)}` },
-                { level: 'info', msg: `User profile updated: ${userId}, email=${email}` },
-                { level: 'warning', msg: `Suspicious activity: user ${userId} attempted 5 logins in 2 minutes` },
-                { level: 'error', msg: `Failed to authenticate user ${userId}: invalid token` },
-            ];
-
-            if (hasBug) {
-                const bugLogs = [
-                    { level: 'error', msg: `SQL error: duplicate key violation when creating user ${userId} (user already exists)` },
-                    { level: 'error', msg: `AttributeError: 'NoneType' object has no attribute 'email' for user ${userId}` },
-                    { level: 'warning', msg: `Session leak: user ${userId} has 47 active sessions, max limit is 5` },
-                    { level: 'error', msg: `Authentication bypass: user ${userId} accessed admin panel without proper permissions` },
-                ];
-                return randomChoice(bugLogs);
-            }
-
-            return level === 'all' ? randomChoice(logs) : logs.find(l => l.level === level) || logs[0];
-        }
-
-        function generateLog() {
-            const serviceType = document.getElementById('serviceType').value;
-            const logLevel = document.getElementById('logLevel').value;
-            const hasBug = shouldInjectBug();
-
-            let service = serviceType === 'all' ? randomChoice(services) : serviceType + '-service';
-            let logData;
-
-            if (service.includes('inventory')) {
-                logData = generateInventoryLog(logLevel, hasBug);
-            } else if (service.includes('pricing')) {
-                logData = generatePricingLog(logLevel, hasBug);
-            } else if (service.includes('payment')) {
-                logData = generatePaymentLog(logLevel, hasBug);
-            } else if (service.includes('inspection')) {
-                logData = generateInspectionLog(logLevel, hasBug);
-            } else {
-                logData = generateUserLog(logLevel, hasBug);
-            }
-
-            const timestamp = getTimestamp();
-            const level = logData.level.toUpperCase();
-            
-            if (hasBug) stats.bugs++;
-            if (level === 'ERROR') stats.errors++;
-            if (level === 'WARNING') stats.warnings++;
-
-            return {
+        function writeLog(service, level, message, metadata = {}) {
+            const timestamp = new Date().toISOString();
+            const logEntry = {
                 timestamp,
-                level,
+                level: level.toUpperCase(),
                 service,
-                message: logData.msg,
-                raw: `[${timestamp}] ${level.padEnd(7)} [${service}] ${logData.msg}`
+                userId,
+                sessionId,
+                message,
+                metadata,
+                raw: `[${timestamp}] ${level.toUpperCase().padEnd(7)} [${service}] [user:${userId}] ${message}`
             };
+
+            systemLogs.push(logEntry);
+            logStats.total++;
+            if (level === 'error') logStats.errors++;
+
+            const logsContainer = document.getElementById('adminLogs');
+            const logDiv = document.createElement('div');
+            logDiv.className = `log-entry ${level}`;
+            logDiv.innerHTML = `
+                <div class="log-timestamp">${timestamp}</div>
+                <div><strong>${level.toUpperCase()}</strong> [${service}] ${message}</div>
+            `;
+            logsContainer.appendChild(logDiv);
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+
+            updateStats();
         }
 
-        function generateLogs() {
-            const count = parseInt(document.getElementById('logCount').value);
-            const output = document.getElementById('logOutput');
+        function triggerRandomBug() {
+            const bugScenarios = [
+                // Common runtime errors
+                {
+                    service: 'pricing-engine',
+                    level: 'error',
+                    msg: `TypeError: Cannot read property 'price' of undefined in calculateFinalPrice() for vehicle VEH005003`,
+                    userVisible: false
+                },
+                {
+                    service: 'inventory-service',
+                    level: 'error',
+                    msg: `Image processing failed: ENOENT: no such file or directory, stat '/uploads/vehicles/VEH005007/main.jpg'`,
+                    userVisible: true,
+                    toast: 'Error al cargar la imagen del vehículo'
+                },
+                {
+                    service: 'database',
+                    level: 'error',
+                    msg: `Deadlock detected on table vehicle_locks; transaction 0x9af3 aborted, retry recommended`,
+                    userVisible: false
+                },
+                {
+                    service: 'payment-gateway',
+                    level: 'error',
+                    msg: `Stripe API error: card_declined for payment_intent pi_1Hxxxxxx (last4=4242)`,
+                    userVisible: true,
+                    toast: 'Pago rechazado: verifica los datos de la tarjeta'
+                },
+
+                // Warnings and operational issues
+                {
+                    service: 'auth-service',
+                    level: 'warning',
+                    msg: `JWT token expired for user ${userId} during background refresh`,
+                    userVisible: false
+                },
+                {
+                    service: 'cache-service',
+                    level: 'warning',
+                    msg: `Cache miss for key vehicle:${'VEH005002'}, fallback to DB (latency +15ms)`,
+                    userVisible: false
+                },
+                {
+                    service: 'api-gateway',
+                    level: 'warning',
+                    msg: `Slow downstream response: inventory-service 2.5s (threshold 1.0s) for /v1/vehicles` ,
+                    userVisible: true,
+                    toast: 'Carga lenta en inventario, inténtalo de nuevo en unos segundos'
+                },
+
+                // Infra / storage
+                {
+                    service: 's3',
+                    level: 'error',
+                    msg: `S3 upload failed: EACCES permission denied when writing to bucket kavak-uploads (key: vehicles/VEH005004/1.jpg)`,
+                    userVisible: false
+                },
+
+                // Search infra
+                {
+                    service: 'search-service',
+                    level: 'error',
+                    msg: `Elasticsearch 503 ServiceUnavailable: [cluster_block_exception] cluster is red, index: vehicles`,
+                    userVisible: true,
+                    toast: 'Búsqueda temporalmente indisponible, se usará un fallback'
+                },
+
+                // Info-level events (useful daily telemetry)
+                {
+                    service: 'cron',
+                    level: 'info',
+                    msg: `Nightly job 'recalculate-prices' completed: processed=1200, updated=189, duration=42s`,
+                    userVisible: false
+                },
+                {
+                    service: 'user-service',
+                    level: 'info',
+                    msg: `New user signup: userId=USR${String(Math.floor(Math.random() * 9000) + 1000)} email=demo+${Math.floor(Math.random()*900)}@example.com`,
+                    userVisible: true,
+                    toast: 'Bienvenido — cuenta creada con éxito'
+                },
+                {
+                    service: 'email-service',
+                    level: 'info',
+                    msg: `Sent welcome email to userId=USR${String(Math.floor(Math.random() * 9000) + 1000)} via SES (messageId: amzn-1a2b3c)`,
+                    userVisible: false
+                },
+                {
+                    service: 'cache-service',
+                    level: 'info',
+                    msg: `Cache warmed: preloaded 1,200 vehicle keys into memory`,
+                    userVisible: false
+                },
+                {
+                    service: 'inventory-service',
+                    level: 'info',
+                    msg: `Vehicle added to inventory: id=VEH${String(5000 + Math.floor(Math.random()*900)).padStart(6,'0')} brand=Toyota status='available'`,
+                    userVisible: true
+                }
+            ];
+
+            const bug = bugScenarios[Math.floor(Math.random() * bugScenarios.length)];
+            writeLog(bug.service, bug.level, bug.msg);
             
-            stats = { total: 0, errors: 0, warnings: 0, bugs: 0 };
-            allLogs = [];
+            if (bug.userVisible && bug.toast) {
+                showErrorToast(bug.toast);
+            }
+        }
 
-            for (let i = 0; i < count; i++) {
-                const log = generateLog();
-                allLogs.push(log);
-                stats.total++;
+        function logAction(category, action, details = '') {
+            logStats.actions++;
+            let message = '';
+            let service = 'user-service';
 
-                const logLine = document.createElement('div');
-                logLine.className = `log-line log-${log.level.toLowerCase()}`;
-                logLine.innerHTML = `<span class="log-timestamp">[${log.timestamp}]</span> <span>${log.level.padEnd(7)}</span> <span class="log-service">[${log.service}]</span> ${log.message}`;
-                output.appendChild(logLine);
+            switch(category) {
+                case 'navigation':
+                    service = 'frontend-app';
+                    message = `User navigation: ${action} ${details}`.trim();
+                    break;
+                case 'search':
+                    service = 'search-service';
+                    message = `Search query: "${details}" (${details.length} chars)`;
+                    // Bug: Sometimes search queries cause errors
+                    if (details.length > 20 && Math.random() < 0.3) {
+                        setTimeout(() => {
+                            writeLog('search-service', 'error', `Query too long: "${details}" exceeded max length (20 chars)`);
+                        }, 500);
+                    }
+                    break;
+                case 'filter':
+                    service = 'inventory-service';
+                    message = `Filter applied: ${action}=${details}`;
+                    break;
+                case 'vehicle':
+                    service = 'inventory-service';
+                    message = `Vehicle ${action}: ${details}`;
+                                break;
+                default:
+                    service = 'frontend-app';
+                    message = `Unknown action: ${category} ${action}`;
+                    break;
             }
 
-            output.scrollTop = output.scrollHeight;
-            updateStats();
+            writeLog(service, 'info', message);
         }
 
-        function updateStats() {
-            document.getElementById('totalLogs').textContent = stats.total;
-            document.getElementById('errorCount').textContent = stats.errors;
-            document.getElementById('warningCount').textContent = stats.warnings;
-            document.getElementById('bugCount').textContent = stats.bugs;
-        }
+        // ---- Vehicle Visualization ----
+        function renderVehicles(filtered = vehicles) {
+            const grid = document.getElementById('vehicleGrid');
+            grid.innerHTML = '';
 
-        function clearLogs() {
-            document.getElementById('logOutput').innerHTML = '';
-            allLogs = [];
-            stats = { total: 0, errors: 0, warnings: 0, bugs: 0 };
-            updateStats();
-        }
-
-        function downloadLogs() {
-            if (allLogs.length === 0) {
-                alert('No logs to download. Generate logs first.');
+            if (!filtered || filtered.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 50px;"><h2 style="color:#777;">🚗 No se encontraron vehículos</h2><p>Intenta con otros filtros o términos de búsqueda.</p></div>`;
                 return;
             }
 
-            const logText = allLogs.map(log => log.raw).join('\n');
-            const blob = new Blob([logText], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `kavak_logs_${Date.now()}.log`;
-            a.click();
-            URL.revokeObjectURL(url);
+            filtered.forEach(v => {
+                const card = document.createElement('div');
+                card.className = 'vehicle-card';
+                card.innerHTML = `
+                    <div class="vehicle-image" aria-hidden="true">
+                        <!-- simple car icon (inline SVG) -->
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M3 12l1.5-4.5A2 2 0 0 1 6.4 6h11.2a2 2 0 0 1 1.9 1.5L21 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 16v1.5A1.5 1.5 0 0 0 6.5 19H7a1 1 0 0 0 1-1v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19 16v1.5A1.5 1.5 0 0 1 17.5 19H17a1 1 0 0 1-1-1v-1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="vehicle-info">
+                        <div style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+                            <div style="min-width:0;">
+                                <div class="vehicle-title">${v.brand} ${v.model}</div>
+                                <div class="vehicle-details">
+                                    <div class="detail-item">🗓️ ${v.year}</div>
+                                    <div class="detail-item">🚘 ${v.mileage.toLocaleString()} km</div>
+                                </div>
+                            </div>
+                            <div style="text-align:right;">
+                                <div class="vehicle-price">$${v.price.toLocaleString()}</div>
+                                <button class="btn-view" onclick="(function(){ logAction('vehicle','view','${v.id}'); viewVehicle('${v.id}'); })()">Ver</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
 
-        // Generate initial logs
-        window.onload = () => generateLogs();
+        function applyFilters() {
+            const brand = document.getElementById('brandFilter').value;
+            const year = document.getElementById('yearFilter').value;
+            const maxPrice = parseInt(document.getElementById('priceFilter').value) || Infinity;
+
+            const filtered = vehicles.filter(v =>
+                (!brand || v.brand === brand) &&
+                (!year || v.year == year) &&
+                (v.price <= maxPrice)
+            );
+
+            logAction('filter', 'apply', `${brand || 'Todas'} | ${year || 'Todos'} | ${maxPrice === Infinity ? 'Sin límite' : maxPrice}`);
+            renderVehicles(filtered);
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            if (!query) {
+                renderVehicles();
+                return;
+            }
+
+            const filtered = vehicles.filter(v =>
+                v.brand.toLowerCase().includes(query) ||
+                v.model.toLowerCase().includes(query) ||
+                String(v.year).includes(query)
+            );
+
+            logAction('search', 'execute', query);
+            renderVehicles(filtered);
+        }
+
+        // ---- Admin Panel Control ----
+        function toggleAdminPanel() {
+            document.getElementById('adminPanel').classList.toggle('active');
+            logAction('admin', 'toggle_panel');
+        }
+
+        function updateStats() {
+            document.getElementById('totalEvents').textContent = logStats.total;
+            document.getElementById('errorEvents').textContent = logStats.errors;
+            document.getElementById('userActions').textContent = logStats.actions;
+        }
+
+        function downloadLogs() {
+            // Export the full logs as pretty-printed JSON
+            try {
+                const content = JSON.stringify(systemLogs, null, 2);
+                const blob = new Blob([content], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `kavak_logs_${Date.now()}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+                logAction('admin', 'download_logs');
+            } catch (err) {
+                console.error('Failed to export logs as JSON', err);
+                showErrorToast('No se pudo descargar los logs en formato JSON');
+            }
+        }
+
+        function clearLogs() {
+            systemLogs = [];
+            document.getElementById('adminLogs').innerHTML = '';
+            logStats = { total: 0, errors: 0, actions: 0 };
+            updateStats();
+            logAction('admin', 'clear_logs');
+        }
+
+        function attemptLogin() {
+            showLoading();
+            logAction('user', 'attempt_login');
+            setTimeout(() => {
+                hideLoading();
+                writeLog('auth-service', 'info', 'User successfully logged in');
+            }, 1500);
+        }
+
+        // --- Cross-page event handling (listen for events from other tabs/pages) ---
+        function handleCrossEvent(payload) {
+            try {
+                const p = typeof payload === 'string' ? JSON.parse(payload) : payload;
+                writeLog('cross-page', 'info', `Received cross event from ${p.source}: ${p.action}`, p);
+                // open admin panel so the user immediately sees logs
+                const panel = document.getElementById('adminPanel');
+                if (panel) panel.classList.add('active');
+                // optional: show a small toast
+                if (p && p.source) showErrorToast(`Evento desde ${p.source} recibido`);
+            } catch (err) {
+                console.warn('Failed to handle cross event', err);
+            }
+        }
+
+        // storage event fires when another tab writes to localStorage
+        window.addEventListener('storage', (e) => {
+            if (!e) return;
+            if (e.key === 'kavak_cross_event' && e.newValue) {
+                handleCrossEvent(e.newValue);
+                // remove the payload after handling to avoid duplicate processing
+                try { localStorage.removeItem('kavak_cross_event'); } catch (err) {}
+            }
+        });
+
+        // On load, also check if there is an event already written
+        (function checkPendingCrossEvent(){
+            try {
+                const raw = localStorage.getItem('kavak_cross_event');
+                if (raw) {
+                    handleCrossEvent(raw);
+                    localStorage.removeItem('kavak_cross_event');
+                }
+            } catch (err) {}
+        })();
+
+        // ---- Initialize Page ----
+        window.onload = () => {
+            renderVehicles();
+            writeLog('frontend-app', 'info', 'Application initialized successfully');
+            setInterval(triggerRandomBug, 12000); // Random system issues every 12s
+        };
     </script>
+
+    <!-- Footer -->
+    <footer style="
+        background: linear-gradient(135deg, #0b533b 0%, #084733 60%, #062a4f 100%); /* dark green to navy */
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+    ">
+        <h2 style="font-weight:900; margin-bottom:15px;">KAVAK</h2>
+        <p style="opacity:0.9;">Compra, vende y financia autos seminuevos con confianza.</p>
+        <div style="margin-top:25px; font-size:14px; opacity:0.8;">
+            © 2025 Kavak México — Todos los derechos reservados
+        </div>
+    </footer>
 </body>
 </html>
