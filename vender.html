@@ -515,11 +515,12 @@
 <body>
     <div class="header">
         <div class="nav-container">
-            <div class="logo">KAVAK</div>
+            <a class="logo" href="index.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logo');">KAVAK</a>
             <div class="nav-links">
                 <a href="comprar.html">Comprar</a>
                 <a href="vender.html">Vender</a>
-                <a href="#">Financiar</a>
+                <a href="ayuda.html" onclick="logAction('navigation','click_ayuda')">Ayuda</a>
+                <a href="logs.html" onclick="logAction('navigation','click_logs')">Logs</a>
                 <a class="btn-login" href="login.html">Ingresar</a>
             </div>
         </div>
@@ -656,8 +657,7 @@
         </div>
     </div>
 
-    <!-- Admin Panel Toggle -->
-    <button class="admin-toggle" onclick="toggleAdminPanel()">📊</button>
+    <!-- Floating admin button removed; access logs at /logs.html -->
 
     <!-- Admin Panel -->
     <div class="admin-panel" id="adminPanel">
@@ -844,8 +844,54 @@
         // ===== ADMIN PANEL CONTROLS =====
         function toggleAdminPanel() {
             const panel = document.getElementById('adminPanel');
+            const opening = !panel.classList.contains('active');
             panel.classList.toggle('active');
             logAction('admin', 'toggle_panel');
+            if (opening) loadAllLogsAndRender();
+        }
+
+        // Aggregation helpers (load logs from any key starting with kavak_logs_)
+        function mergeAndRenderLogs(allLogs) {
+            const seen = new Set();
+            const merged = [];
+            allLogs.sort((a,b)=> (a.timestamp||'').localeCompare(b.timestamp||''));
+            allLogs.forEach(l => {
+                const key = l.raw || `${l.timestamp}|${l.service}|${l.message}`;
+                if (!seen.has(key)) { seen.add(key); merged.push(l); }
+            });
+
+            const logsContainer = document.getElementById('adminLogs');
+            logsContainer.innerHTML = '';
+            merged.forEach(l => {
+                const div = document.createElement('div');
+                const level = (l.level||'INFO').toLowerCase();
+                div.className = `log-entry ${level}`;
+                div.innerHTML = `\n                    <div class="log-timestamp">${l.timestamp || ''}</div>\n                    <div><strong>${(l.level||'').toUpperCase()}</strong> [${l.service || ''}] ${l.message || ''}</div>\n                `;
+                logsContainer.appendChild(div);
+            });
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+            logStats.total = merged.length;
+            logStats.errors = merged.filter(x => (x.level||'').toLowerCase() === 'error').length;
+            updateStats();
+        }
+
+        function loadAllLogsAndRender() {
+            try {
+                const all = [];
+                for (let i=0;i<localStorage.length;i++) {
+                    const k = localStorage.key(i);
+                    if (!k) continue;
+                    if (k.startsWith('kavak_logs_')) {
+                        try {
+                            const arr = JSON.parse(localStorage.getItem(k) || '[]');
+                            if (Array.isArray(arr)) arr.forEach(l => all.push(l));
+                        } catch(e) {}
+                    }
+                }
+                // include in-memory logs
+                systemLogs.forEach(s => all.push(s));
+                mergeAndRenderLogs(all);
+            } catch (err) { console.warn('Failed to load all logs', err); }
         }
 
         function updateStats() {
@@ -942,6 +988,50 @@
             populateYears();
             writeLog('frontend-app', 'info', 'Vender page initialized successfully');
         };
+    </script>
+    <!-- BUG INJECTION: vender page -->
+    <script>
+        // <<BUG_INJECTION_VENDER>>
+        (function injectVenderBugs(){
+            try {
+                const FLAG = 'kavak_injected_bugs_vender';
+                if (localStorage.getItem(FLAG)) return; // only inject once
+                const KEY = 'kavak_logs_vender';
+                const now = new Date().toISOString();
+                const samples = [
+                    {
+                        timestamp: now,
+                        level: 'ERROR',
+                        service: 'inventory-service',
+                        message: 'NullPointerException in getVehiclePrice() for VEH005016: price field is null',
+                        raw: `[${now}] ERROR   [inventory-service] NullPointerException in getVehiclePrice() for VEH005016: price field is null`,
+                        userId: 'USR000100', sessionId: 'VENDER_SAMPLE', page: 'vender', metadata: {}
+                    },
+                    {
+                        timestamp: now,
+                        level: 'WARNING',
+                        service: 'inspection-api',
+                        message: 'Inspection image upload slow for vehicle VEH005016 (2000ms)',
+                        raw: `[${now}] WARNING [inspection-api] Inspection image upload slow for vehicle VEH005016 (2000ms)`,
+                        userId: 'USR000100', sessionId: 'VENDER_SAMPLE', page: 'vender', metadata: {}
+                    },
+                    {
+                        timestamp: now,
+                        level: 'INFO',
+                        service: 'user-service',
+                        message: 'User USR000100 navigated to vender page',
+                        raw: `[${now}] INFO    [user-service] User USR000100 navigated to vender page`,
+                        userId: 'USR000100', sessionId: 'VENDER_SAMPLE', page: 'vender', metadata: {}
+                    }
+                ];
+                const existing = JSON.parse(localStorage.getItem(KEY) || '[]');
+                const merged = samples.concat(existing);
+                localStorage.setItem(KEY, JSON.stringify(merged));
+                localStorage.setItem(FLAG, '1');
+                // Trigger storage event for other tabs
+                try { localStorage.setItem('kavak_bug_injected_signal', JSON.stringify({page:'vender',ts:Date.now()})); localStorage.removeItem('kavak_bug_injected_signal'); } catch(e){}
+            } catch (e) { console.error('injectVenderBugs', e); }
+        })();
     </script>
 </body>
 </html>

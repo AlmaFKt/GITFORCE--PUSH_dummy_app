@@ -222,6 +222,145 @@ function writeJson(file, obj) {
   fs.writeFileSync(file, JSON.stringify(obj, null, 2));
 }
 
+// ===== sqlite-backed logs storage (optional server-side ingestion) =====
+const sqlite3 = require('sqlite3').verbose();
+const DB_DIR = path.join(__dirname, 'data');
+if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
+const DB_PATH = path.join(DB_DIR, 'logs.db');
+const db = new sqlite3.Database(DB_PATH, (err) => { if (err) console.error('Failed to open SQLite DB', err); });
+
+db.serialize(() => {
+  db.run(`CREATE TABLE IF NOT EXISTS logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT,
+    level TEXT,
+    service TEXT,
+    userId TEXT,
+    sessionId TEXT,
+    message TEXT,
+    metadata TEXT,
+    raw TEXT UNIQUE,
+    page TEXT,
+    source TEXT,
+    created_at TEXT DEFAULT (datetime('now'))
+  )`);
+});
+
+function insertLogToDb(log) {
+  return new Promise((resolve, reject) => {
+    const metadata = log.metadata ? JSON.stringify(log.metadata) : '{}';
+    const stmt = db.prepare(`INSERT OR IGNORE INTO logs (timestamp, level, service, userId, sessionId, message, metadata, raw, page, source) VALUES (?,?,?,?,?,?,?,?,?,?)`);
+    stmt.run(
+      log.timestamp || new Date().toISOString(),
+      (log.level || 'INFO').toUpperCase(),
+      log.service || null,
+      log.userId || null,
+      log.sessionId || null,
+      log.message || null,
+      metadata,
+      log.raw || null,
+      log.page || null,
+      log.source || 'client',
+      function (err) {
+        stmt.finalize();
+        if (err) return reject(err);
+        resolve(this.changes || 0);
+      }
+    );
+  });
+}
+
+// Ingest logs: accepts single object or array
+app.post('/api/logs', async (req, res) => {
+  const payload = req.body;
+  if (!payload) return res.status(400).json({ error: 'empty body' });
+  try {
+    if (Array.isArray(payload)) {
+      let inserted = 0;
+      db.serialize(() => {
+        db.run('BEGIN TRANSACTION');
+        const promises = payload.map(p => insertLogToDb(p).then(n => { inserted += n }).catch(() => {}));
+        Promise.all(promises).then(() => {
+          db.run('COMMIT', () => res.json({ inserted }));
+        }).catch(err => {
+          db.run('ROLLBACK', () => res.status(500).json({ error: err.message }));
+        });
+      });
+    } else if (typeof payload === 'object') {
+      const n = await insertLogToDb(payload);
+      res.json({ inserted: n });
+    } else {
+      res.status(400).json({ error: 'invalid payload' });
+    }
+  } catch (err) {
+    console.error('Error inserting logs', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Query logs from sqlite DB with simple filters
+app.get('/api/logs', (req, res) => {
+  const { level, page, search, since, limit = 200, offset = 0 } = req.query;
+  const params = [];
+  const where = [];
+  if (level) { where.push('level = ?'); params.push(level.toUpperCase()); }
+  if (page) { where.push('page = ?'); params.push(page); }
+  if (since) { where.push('timestamp > ?'); params.push(since); }
+  if (search) { where.push('(message LIKE ? OR service LIKE ? OR userId LIKE ? OR raw LIKE ?)'); const s = `%${search}%`; params.push(s,s,s,s); }
+  const whereSQL = where.length ? ('WHERE ' + where.join(' AND ')) : '';
+  const sql = `SELECT id, timestamp, level, service, userId, sessionId, message, metadata, raw, page FROM logs ${whereSQL} ORDER BY datetime(timestamp) DESC LIMIT ? OFFSET ?`;
+  params.push(parseInt(limit), parseInt(offset));
+  db.all(sql, params, (err, rows) => {
+    if (err) return res.status(500).json({ error: err.message });
+    rows.forEach(r => { try { r.metadata = r.metadata ? JSON.parse(r.metadata) : {}; } catch(e){ r.metadata = {}; } });
+    res.json(rows);
+  });
+});
+
+// Export logs as NDJSON or CSV (streaming) — useful for sharing with analysts via curl
+app.get('/api/logs/export', (req, res) => {
+  const format = (req.query.format || 'ndjson').toLowerCase();
+  const since = req.query.since;
+  const level = req.query.level;
+  const page = req.query.page;
+  const where = [];
+  const params = [];
+  if (since) { where.push('timestamp > ?'); params.push(since); }
+  if (level) { where.push('level = ?'); params.push(level.toUpperCase()); }
+  if (page) { where.push('page = ?'); params.push(page); }
+  const whereSQL = where.length ? ('WHERE ' + where.join(' AND ')) : '';
+  const sql = `SELECT id, timestamp, level, service, userId, sessionId, message, metadata, raw, page FROM logs ${whereSQL} ORDER BY datetime(timestamp) DESC`;
+
+  if (format === 'csv') {
+    res.setHeader('Content-Type', 'text/csv; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="kavak_logs_${Date.now()}.csv"`);
+    // write header
+    res.write('id,timestamp,level,service,userId,sessionId,page,message\n');
+    db.each(sql, params, (err, row) => {
+      if (err) return console.error('export err', err);
+      // simple CSV escaping
+      const safe = (v) => '"' + String((v === null || v === undefined) ? '' : String(v)).replace(/"/g, '""') + '"';
+      res.write([row.id, row.timestamp, row.level, row.service, row.userId, row.sessionId, row.page, safe(row.message)].join(',') + '\n');
+    }, (err, n) => {
+      if (err) console.error('export finish err', err);
+      res.end();
+    });
+  } else {
+    // NDJSON
+    res.setHeader('Content-Type', 'application/x-ndjson; charset=utf-8');
+    res.setHeader('Content-Disposition', `attachment; filename="kavak_logs_${Date.now()}.ndjson"`);
+    db.each(sql, params, (err, row) => {
+      if (err) return console.error('export err', err);
+      try { row.metadata = row.metadata ? JSON.parse(row.metadata) : {}; } catch(e){ row.metadata = {}; }
+      res.write(JSON.stringify(row) + '\n');
+    }, (err, n) => {
+      if (err) console.error('export finish err', err);
+      res.end();
+    });
+  }
+});
+
+
 // List agents
 app.get('/api/agents', (req, res) => {
   const agents = readJson(AGENTS_FILE);

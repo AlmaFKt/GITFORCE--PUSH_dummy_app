@@ -105,7 +105,8 @@
             <div class="nav-links">
                 <a href="comprar.html">Comprar</a>
                 <a href="vender.html" onclick="logAction('navigation','click_vender')">Vender</a>
-                <a href="#">Financiar</a>
+                <a href="ayuda.html" onclick="logAction('navigation','click_ayuda')">Ayuda</a>
+                <a href="logs.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logs')">Logs</a>
                 <a class="btn-login" href="login.html">Ingresar</a>
             </div>
         </div>
@@ -184,6 +185,41 @@
                 }
             }, 900);
         });
+    </script>
+    <!-- BUG INJECTION: login page -->
+    <script>
+        // <<BUG_INJECTION_LOGIN>>
+        (function injectLoginBugs(){
+            try {
+                const FLAG = 'kavak_injected_bugs_login';
+                if (localStorage.getItem(FLAG)) return;
+                const KEY = 'kavak_logs_login';
+                const now = new Date().toISOString();
+                const samples = [
+                    {
+                        timestamp: now,
+                        level: 'WARNING',
+                        service: 'auth-service',
+                        message: 'JWT token expired for user during background refresh',
+                        raw: `[${now}] WARNING [auth-service] JWT token expired for user during background refresh`,
+                        userId: 'USR000400', sessionId: 'LOGIN_SAMPLE', page: 'login', metadata: {}
+                    },
+                    {
+                        timestamp: now,
+                        level: 'INFO',
+                        service: 'user-service',
+                        message: 'Password reset requested for user USR000401',
+                        raw: `[${now}] INFO    [user-service] Password reset requested for user USR000401`,
+                        userId: 'USR000401', sessionId: 'LOGIN_SAMPLE', page: 'login', metadata: {}
+                    }
+                ];
+                const existing = JSON.parse(localStorage.getItem(KEY) || '[]');
+                const merged = samples.concat(existing);
+                localStorage.setItem(KEY, JSON.stringify(merged));
+                localStorage.setItem(FLAG, '1');
+                try { localStorage.setItem('kavak_bug_injected_signal', JSON.stringify({page:'login',ts:Date.now()})); localStorage.removeItem('kavak_bug_injected_signal'); } catch(e){}
+            } catch (e) { console.error('injectLoginBugs', e); }
+        })();
     </script>
 </body>
 </html>

@@ -40,7 +40,7 @@
         .logo {
             font-size: 32px;
             font-weight: 900;
-            color: #000; /* Kavak icon/name in black */
+            color: #062a4f; /* adjusted to match logs header palette */
             letter-spacing: -1px;
         }
 
@@ -59,7 +59,7 @@
         }
 
         .nav-links a:hover {
-            color: #00d4aa;
+            color: #16324a; /* tuned hover color to match header palette */
             transform: translateY(-2px);
         }
 
@@ -572,8 +572,8 @@
             <div class="nav-links">
                 <a href="comprar.html" onclick="logAction('navigation','click_comprar')">Comprar</a>
                 <a href="vender.html" onclick="logAction('navigation','click_vender')">Vender</a>
-                <a href="#" onclick="logAction('navigation', 'click_financiamiento'); return false;">Financiamiento</a>
-                <a href="#" onclick="logAction('navigation', 'click_ayuda'); return false;">Ayuda</a>
+                <a href="ayuda.html" onclick="logAction('navigation', 'click_ayuda')">Ayuda</a>
+                <a href="logs.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logs')">Logs</a>
                 <a class="btn-login" href="login.html" onclick="logAction('navigation','click_login');">Ingresar</a>
             </div>
         </div>
@@ -642,8 +642,7 @@
         <div class="vehicle-grid" id="vehicleGrid"></div>
     </div>
 
-    <!-- Admin Panel Toggle -->
-    <button class="admin-toggle" onclick="toggleAdminPanel()">📊</button>
+    <!-- Floating admin toggle removed; use the Logs page from the header nav -->
 
     <!-- Admin Panel -->
     <div class="admin-panel" id="adminPanel">
@@ -722,7 +721,12 @@
             logStats.total++;
             if (level === 'error') logStats.errors++;
 
-            const logsContainer = document.getElementById('adminLogs');
+                // persist index logs to localStorage so other pages can aggregate
+                try {
+                    localStorage.setItem('kavak_logs_index', JSON.stringify(systemLogs));
+                } catch (err) {}
+
+                const logsContainer = document.getElementById('adminLogs');
             const logDiv = document.createElement('div');
             logDiv.className = `log-entry ${level}`;
             logDiv.innerHTML = `
@@ -958,8 +962,73 @@
 
         // ---- Admin Panel Control ----
         function toggleAdminPanel() {
-            document.getElementById('adminPanel').classList.toggle('active');
+            const panel = document.getElementById('adminPanel');
+            const opening = !panel.classList.contains('active');
+            panel.classList.toggle('active');
             logAction('admin', 'toggle_panel');
+            if (opening) loadAllLogsAndRender();
+        }
+
+        // Persist/load helpers and aggregator across pages
+        function loadPersistedLogsIndex() {
+            try {
+                const raw = localStorage.getItem('kavak_logs_index');
+                if (raw) {
+                    const arr = JSON.parse(raw);
+                    // merge into systemLogs for local visibility (avoid duplicates)
+                    arr.forEach(l => {
+                        if (!systemLogs.find(s => s.raw === l.raw)) systemLogs.push(l);
+                    });
+                }
+            } catch (err) {}
+        }
+
+        function mergeAndRenderLogs(allLogs) {
+            // dedupe by raw string (timestamp+service+message)
+            const seen = new Set();
+            const merged = [];
+            allLogs.sort((a,b)=> (a.timestamp||'').localeCompare(b.timestamp||''));
+            allLogs.forEach(l => {
+                const key = l.raw || `${l.timestamp}|${l.service}|${l.message}`;
+                if (!seen.has(key)) { seen.add(key); merged.push(l); }
+            });
+
+            const logsContainer = document.getElementById('adminLogs');
+            logsContainer.innerHTML = '';
+            merged.forEach(l => {
+                const div = document.createElement('div');
+                const level = (l.level||'INFO').toLowerCase();
+                div.className = `log-entry ${level}`;
+                div.innerHTML = `\n                    <div class="log-timestamp">${l.timestamp || ''}</div>\n                    <div><strong>${(l.level||'').toUpperCase()}</strong> [${l.service || ''}] ${l.message || ''}</div>\n                `;
+                logsContainer.appendChild(div);
+            });
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+            // update stats based on merged
+            logStats.total = merged.length;
+            logStats.errors = merged.filter(x => (x.level||'').toLowerCase() === 'error').length;
+            updateStats();
+        }
+
+        function loadAllLogsAndRender() {
+            try {
+                const all = [];
+                // collect any key that starts with kavak_logs_
+                for (let i=0;i<localStorage.length;i++) {
+                    const k = localStorage.key(i);
+                    if (!k) continue;
+                    if (k.startsWith('kavak_logs_')) {
+                        try {
+                            const arr = JSON.parse(localStorage.getItem(k) || '[]');
+                            if (Array.isArray(arr)) {
+                                arr.forEach(l => all.push(l));
+                            }
+                        } catch(e) {}
+                    }
+                }
+                // also include in-memory systemLogs
+                systemLogs.forEach(s => all.push(s));
+                mergeAndRenderLogs(all);
+            } catch (err) { console.warn('Failed to load all logs', err); }
         }
 
         function updateStats() {
@@ -1045,6 +1114,50 @@
             writeLog('frontend-app', 'info', 'Application initialized successfully');
             setInterval(triggerRandomBug, 12000); // Random system issues every 12s
         };
+    </script>
+
+    <!-- BUG INJECTION: index page -->
+    <script>
+        // <<BUG_INJECTION_INDEX>>
+        (function injectIndexBugs(){
+            try {
+                const FLAG = 'kavak_injected_bugs_index';
+                if (localStorage.getItem(FLAG)) return;
+                const KEY = 'kavak_logs_index';
+                const now = new Date().toISOString();
+                const samples = [
+                    {
+                        timestamp: now,
+                        level: 'ERROR',
+                        service: 'payment-gateway',
+                        message: 'Sensitive data leak: credit card number logged in plaintext for transaction TXN981464',
+                        raw: `[${now}] ERROR   [payment-gateway] Sensitive data leak: credit card number logged in plaintext for transaction TXN981464`,
+                        userId: 'USR000300', sessionId: 'INDEX_SAMPLE', page: 'index', metadata: {}
+                    },
+                    {
+                        timestamp: now,
+                        level: 'WARNING',
+                        service: 'search-service',
+                        message: 'Slow query detected: heavy aggregation for recent searches (1.9s)',
+                        raw: `[${now}] WARNING [search-service] Slow query detected: heavy aggregation for recent searches (1.9s)`,
+                        userId: 'USR000301', sessionId: 'INDEX_SAMPLE', page: 'index', metadata: {}
+                    },
+                    {
+                        timestamp: now,
+                        level: 'INFO',
+                        service: 'cron',
+                        message: 'Nightly job ran: cache warm completed',
+                        raw: `[${now}] INFO    [cron] Nightly job ran: cache warm completed`,
+                        userId: 'system', sessionId: 'INDEX_SAMPLE', page: 'index', metadata: {}
+                    }
+                ];
+                const existing = JSON.parse(localStorage.getItem(KEY) || '[]');
+                const merged = samples.concat(existing);
+                localStorage.setItem(KEY, JSON.stringify(merged));
+                localStorage.setItem(FLAG, '1');
+                try { localStorage.setItem('kavak_bug_injected_signal', JSON.stringify({page:'index',ts:Date.now()})); localStorage.removeItem('kavak_bug_injected_signal'); } catch(e){}
+            } catch (e) { console.error('injectIndexBugs', e); }
+        })();
     </script>
 
     <!-- Footer -->

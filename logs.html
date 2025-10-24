@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVAK — System Logs Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background: #f6f7f8;
+            color: #0f1720;
+            min-height: 100vh;
+        }
+
+        /* Header styles copied from index.html to keep an identical app bar */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* keep compatibility with logs layout wrapper */
+        .header-content { width:100%; }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 900;
+            color: #062a4f; /* tuned to index palette */
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #16324a;
+            font-weight: 600;
+            transition: all 0.3s;
+            position: relative;
+            padding: 8px 10px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(6,42,79,0.04);
+            transform: translateY(-2px);
+        }
+
+        .btn-login, .btn-header {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a88f 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,212,170,0.3);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-login:hover, .btn-header:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,212,170,0.4); }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #242e41;
+            padding: 14px 24px;
+            border-bottom: 1px solid #030404;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        @media (max-width: 900px) {
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 500px) {
+            .stats-container { grid-template-columns: 1fr; }
+        }
+
+        .stat-card {
+            background: transparent;
+            padding: 12px 10px;
+            border-radius: 8px;
+            border-left: 3px solid rgba(31,138,95,0.16);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            display:flex;
+            flex-direction:column;
+            align-items:flex-start;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+        }
+
+        .stat-card.errors { border-left-color: rgba(244,135,113,0.18); }
+        .stat-card.warnings { border-left-color: rgba(220,220,170,0.14); }
+        .stat-card.info { border-left-color: rgba(0,212,170,0.16); }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 800;
+            color: #cfeee0;
+            margin-bottom: 4px;
+        }
+
+        .stat-card.errors .stat-value { color: #f8c0b6; }
+        .stat-card.warnings .stat-value { color: #efe9b8; }
+        .stat-card.info .stat-value { color: #b6fff4; }
+
+        .stat-label {
+            font-size: 10px;
+            color: #aab3b7;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        /* Filters */
+        .filters-section {
+            background: #1a1f2e;
+            padding: 20px 40px;
+            border-bottom: 2px solid #2d3548;
+        }
+
+        .filters-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            color: #858585;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn {
+            padding: 8px 16px;
+            background: #252d3d;
+            border: 2px solid #3d4557;
+            color: #d4d4d4;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-family: 'Monaco', monospace;
+        }
+
+        .filter-btn:hover {
+            background: #2d3548;
+            border-color: #1f8a5f;
+        }
+
+        .filter-btn.active {
+            background: #1f8a5f;
+            border-color: #1f8a5f;
+            color: white;
+        }
+
+        .filter-btn.error.active {
+            background: #f48771;
+            border-color: #f48771;
+        }
+
+        .filter-btn.warning.active {
+            background: #dcdcaa;
+            border-color: #dcdcaa;
+            color: #1a1f2e;
+        }
+
+        .filter-btn.info.active {
+            background: #00d4aa;
+            border-color: #00d4aa;
+            color: #1a1f2e;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 8px 16px;
+            background: #252d3d;
+            border: 2px solid #3d4557;
+            color: #d4d4d4;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: 'Monaco', monospace;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #1f8a5f;
+        }
+
+        .select-page {
+            padding: 8px 16px;
+            background: #252d3d;
+            border: 2px solid #3d4557;
+            color: #d4d4d4;
+            border-radius: 8px;
+            font-size: 12px;
+            font-family: 'Monaco', monospace;
+            cursor: pointer;
+        }
+
+        .select-page:focus {
+            outline: none;
+            border-color: #1f8a5f;
+        }
+
+        /* Logs Content */
+        .logs-content {
+            max-width: 1400px;
+            margin: 12px auto 28px auto;
+            padding: 18px 20px;
+        }
+
+        .logs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logs-title {
+            font-size: 16px;
+            color: #858585;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logs-count {
+            font-size: 13px;
+            color: #1f8a5f;
+            font-weight: 700;
+        }
+
+        .logs-container {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 26px;
+            max-height: calc(100vh - 260px);
+            overflow-y: auto;
+            border: 1px solid rgba(15,23,36,0.06);
+            box-shadow: 0 10px 30px rgba(6,42,79,0.06);
+        }
+
+        .log-entry {
+            background: #ffffff;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #00d4aa;
+            transition: all 0.18s ease;
+            animation: slideIn 0.22s ease;
+            color: #0f1720;
+            box-shadow: 0 6px 18px rgba(6,42,79,0.04);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .log-entry:hover { transform: translateX(4px); }
+
+        .log-entry.error {
+            border-left-color: #f48771;
+        }
+
+        .log-entry.warning {
+            border-left-color: #dcdcaa;
+        }
+
+        .log-entry.info {
+            border-left-color: #00d4aa;
+        }
+
+        .log-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .log-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .log-level {
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .log-level.error {
+            background: rgba(244, 135, 113, 0.2);
+            color: #f48771;
+        }
+
+        .log-level.warning {
+            background: rgba(220, 220, 170, 0.2);
+            color: #dcdcaa;
+        }
+
+        .log-level.info {
+            background: rgba(0, 212, 170, 0.2);
+            color: #00d4aa;
+        }
+
+        .log-service {
+            font-size: 11px;
+            color: #475569;
+            padding: 4px 8px;
+            background: rgba(15,23,36,0.03);
+            border-radius: 6px;
+        }
+
+        .log-page {
+            font-size: 11px;
+            color: #1f8a5f;
+            padding: 4px 10px;
+            background: rgba(31, 138, 95, 0.1);
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .log-timestamp {
+            font-size: 11px;
+            color: #858585;
+        }
+
+        .log-message {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #0f1720;
+            margin-top: 6px;
+        }
+
+        .log-user {
+            font-size: 10px;
+            color: #858585;
+            margin-top: 5px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #858585;
+        }
+
+        .empty-state-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.3;
+        }
+
+        .empty-state-text {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .empty-state-subtext {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* Scrollbar */
+        .logs-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .logs-container::-webkit-scrollbar-track {
+            background: #1a1f2e;
+        }
+
+        .logs-container::-webkit-scrollbar-thumb {
+            background: #3d4557;
+            border-radius: 4px;
+        }
+
+        .logs-container::-webkit-scrollbar-thumb:hover {
+            background: #4d5567;
+        }
+
+        /* Auto-refresh indicator */
+        .refresh-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 20px;
+            background: #1f8a5f;
+            color: white;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(31, 138, 95, 0.4);
+            display: none;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        .refresh-indicator.active {
+            display: flex;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .spinner {
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="nav-container">
+            <a class="logo" href="index.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logo');">KAVAK</a>
+            <div class="nav-links">
+                <a href="comprar.html" onclick="if(typeof logAction==='function') logAction('navigation','click_comprar')">Comprar</a>
+                <a href="vender.html" onclick="if(typeof logAction==='function') logAction('navigation','click_vender')">Vender</a>
+                <a href="ayuda.html" onclick="if(typeof logAction==='function') logAction('navigation','click_ayuda')">Ayuda</a>
+                <a href="logs.html" style="text-decoration:underline;">Logs</a>
+            </div>
+
+            <div style="display:flex;gap:12px;align-items:center;">
+                <button class="btn-login" onclick="refreshLogs()">🔄 Refresh</button>
+                <a class="btn-login" href="#" onclick="downloadAllLogs()">⬇️ Download</a>
+                <button class="btn-login" onclick="clearAllLogs()">🗑️ Clear All</button>
+                <a class="btn-login" href="login.html">Ingresar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-value" id="totalLogs">0</div>
+                <div class="stat-label">Total Logs</div>
+            </div>
+            <div class="stat-card errors">
+                <div class="stat-value" id="errorLogs">0</div>
+                <div class="stat-label">Errors</div>
+            </div>
+            <div class="stat-card warnings">
+                <div class="stat-value" id="warningLogs">0</div>
+                <div class="stat-label">Warnings</div>
+            </div>
+            <div class="stat-card info">
+                <div class="stat-value" id="infoLogs">0</div>
+                <div class="stat-label">Info</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="uniqueUsers">0</div>
+                <div class="stat-label">Unique Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="activeSessions">0</div>
+                <div class="stat-label">Sessions</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <span class="filter-label">Level:</span>
+                <button class="filter-btn active" data-filter="all" onclick="filterByLevel('all')">All</button>
+                <button class="filter-btn error" data-filter="error" onclick="filterByLevel('error')">Errors</button>
+                <button class="filter-btn warning" data-filter="warning" onclick="filterByLevel('warning')">Warnings</button>
+                <button class="filter-btn info" data-filter="info" onclick="filterByLevel('info')">Info</button>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Page:</span>
+                <select class="select-page" id="pageFilter" onchange="filterByPage()">
+                    <option value="all">All Pages</option>
+                    <option value="comprar">Comprar</option>
+                    <option value="vender">Vender</option>
+                    <option value="index">Index</option>
+                </select>
+            </div>
+
+            <div class="search-box">
+                <span class="filter-label">Search:</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search logs..." oninput="searchLogs()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Logs Content -->
+    <div class="logs-content">
+        <div class="logs-header">
+            <div class="logs-title">System Logs</div>
+            <div class="logs-count"><span id="visibleCount">0</span> logs displayed</div>
+        </div>
+        <div class="logs-container" id="logsContainer">
+            <div class="empty-state">
+                <div class="empty-state-icon">📊</div>
+                <div class="empty-state-text">No logs available</div>
+                <div class="empty-state-subtext">Logs will appear here as they are generated</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto-refresh Indicator -->
+    <div class="refresh-indicator" id="refreshIndicator">
+        <div class="spinner"></div>
+        <span>Auto-refreshing logs...</span>
+    </div>
+
+    <script>
+        // ===== GLOBAL STATE =====
+        let allLogs = [];
+        let filteredLogs = [];
+        let currentFilter = 'all';
+        let currentPage = 'all';
+        let currentSearch = '';
+
+        // dynamic: include all localStorage keys that start with this prefix
+        const LOG_PREFIX = 'kavak_logs_';
+
+        function getLogKeys() {
+            const keys = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const k = localStorage.key(i);
+                if (k && k.startsWith(LOG_PREFIX)) keys.push(k);
+            }
+            return keys;
+        }
+        // Persisted helpers to avoid re-sending same log to server
+        const SAVED_REMOTE_KEY = 'kavak_saved_remote'; // stores array of raw strings
+        const REMOTE_QUEUE_KEY = 'kavak_remote_queue'; // stores array of logs pending send
+        const SERVER_URL = 'http://localhost:3000';
+
+        // ===== LOAD ALL LOGS =====
+        function loadAllLogs() {
+            allLogs = [];
+            
+            // load from any localStorage key that starts with 'kavak_logs_'
+            getLogKeys().forEach(key => {
+                try {
+                    const stored = localStorage.getItem(key);
+                    if (stored) {
+                        const logs = JSON.parse(stored);
+                        allLogs = allLogs.concat(logs);
+                    }
+                } catch (err) {
+                    console.error(`Failed to load logs from ${key}`, err);
+                }
+            });
+
+            // Sort by timestamp (newest first)
+            allLogs.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            updateStats();
+            applyFilters();
+
+            // After loading logs, try to persist detected ERROR/bug logs to server
+            tryAutoSaveErrors();
+        }
+
+        // ===== UPDATE STATS =====
+        function updateStats() {
+            const errorCount = allLogs.filter(log => log.level === 'ERROR').length;
+            const warningCount = allLogs.filter(log => log.level === 'WARNING').length;
+            const infoCount = allLogs.filter(log => log.level === 'INFO').length;
+            const uniqueUsers = new Set(allLogs.map(log => log.userId)).size;
+            const uniqueSessions = new Set(allLogs.map(log => log.sessionId)).size;
+
+            document.getElementById('totalLogs').textContent = allLogs.length;
+            document.getElementById('errorLogs').textContent = errorCount;
+            document.getElementById('warningLogs').textContent = warningCount;
+            document.getElementById('infoLogs').textContent = infoCount;
+            document.getElementById('uniqueUsers').textContent = uniqueUsers;
+            document.getElementById('activeSessions').textContent = uniqueSessions;
+        }
+
+        // ===== APPLY FILTERS =====
+        function applyFilters() {
+            filteredLogs = allLogs;
+
+            // Filter by level
+            if (currentFilter !== 'all') {
+                filteredLogs = filteredLogs.filter(log => 
+                    log.level.toLowerCase() === currentFilter.toLowerCase()
+                );
+            }
+
+            // Filter by page
+            if (currentPage !== 'all') {
+                filteredLogs = filteredLogs.filter(log => 
+                    log.page === currentPage
+                );
+            }
+
+            // Filter by search
+            if (currentSearch) {
+                filteredLogs = filteredLogs.filter(log =>
+                    log.message.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    log.service.toLowerCase().includes(currentSearch.toLowerCase()) ||
+                    log.userId.toLowerCase().includes(currentSearch.toLowerCase())
+                );
+            }
+
+            renderLogs();
+        }
+
+        // ===== RENDER LOGS =====
+        function renderLogs() {
+            const container = document.getElementById('logsContainer');
+            container.innerHTML = '';
+
+            document.getElementById('visibleCount').textContent = filteredLogs.length;
+
+            if (filteredLogs.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">🔍</div>
+                        <div class="empty-state-text">No logs match your filters</div>
+                        <div class="empty-state-subtext">Try adjusting your filters or search query</div>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredLogs.forEach(log => {
+                const logDiv = document.createElement('div');
+                logDiv.className = `log-entry ${log.level.toLowerCase()}`;
+                // mark if saved remotely
+                const savedSet = loadSavedSet();
+                const isSaved = savedSet.has(log.raw);
+
+                logDiv.innerHTML = `
+                    <div class="log-header">
+                        <div class="log-meta">
+                            <span class="log-level ${log.level.toLowerCase()}">${log.level}</span>
+                            <span class="log-service">${log.service}</span>
+                            <span class="log-page">${log.page || 'unknown'}</span>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:center;">
+                          <div class="log-timestamp">${new Date(log.timestamp).toLocaleString('es-MX')}</div>
+                          ${isSaved ? '<div style="font-size:11px;color:#1f8a5f;font-weight:700;padding:4px 8px;border-radius:6px;background:rgba(31,138,95,0.09)">Saved</div>' : ''}
+                        </div>
+                    </div>
+                    <div class="log-message">${log.message}</div>
+                    <div class="log-user">User: ${log.userId} | Session: ${log.sessionId}</div>
+                `;
+                container.appendChild(logDiv);
+            });
+        }
+
+        // ===== REMOTE PERSISTENCE HELPERS =====
+        function loadSavedSet() {
+            try {
+                const raw = localStorage.getItem(SAVED_REMOTE_KEY);
+                const arr = raw ? JSON.parse(raw) : [];
+                return new Set(arr || []);
+            } catch (e) { return new Set(); }
+        }
+
+        function saveSavedSet(set) {
+            try {
+                const arr = Array.from(set);
+                localStorage.setItem(SAVED_REMOTE_KEY, JSON.stringify(arr));
+            } catch (e) { console.error('Failed to persist saved set', e); }
+        }
+
+        function enqueueRemote(log) {
+            try {
+                const rawQueue = localStorage.getItem(REMOTE_QUEUE_KEY);
+                const queue = rawQueue ? JSON.parse(rawQueue) : [];
+                queue.push(log);
+                localStorage.setItem(REMOTE_QUEUE_KEY, JSON.stringify(queue));
+            } catch (e) { console.error('enqueue error', e); }
+        }
+
+        async function flushRemoteQueue() {
+            try {
+                const rawQueue = localStorage.getItem(REMOTE_QUEUE_KEY);
+                const queue = rawQueue ? JSON.parse(rawQueue) : [];
+                if (!queue || queue.length === 0) return;
+                // try to POST as array
+                const resp = await fetch(`${SERVER_URL}/api/logs`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(queue),
+                });
+                if (resp.ok) {
+                    // mark all as saved
+                    const saved = loadSavedSet();
+                    queue.forEach(l => saved.add(l.raw));
+                    saveSavedSet(saved);
+                    localStorage.removeItem(REMOTE_QUEUE_KEY);
+                    // rerender to show Saved badges
+                    applyFilters();
+                } else {
+                    console.warn('flushRemoteQueue failed', await resp.text());
+                }
+            } catch (err) {
+                // network or CORS issue - keep queue
+                //console.error('flushRemoteQueue err', err);
+            }
+        }
+
+        async function saveLogToServer(log) {
+            try {
+                // Post single log
+                const resp = await fetch(`${SERVER_URL}/api/logs`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(log),
+                });
+                if (resp.ok) {
+                    const saved = loadSavedSet();
+                    saved.add(log.raw);
+                    saveSavedSet(saved);
+                    return true;
+                }
+                // If failed, enqueue for retry
+                enqueueRemote(log);
+                return false;
+            } catch (err) {
+                enqueueRemote(log);
+                return false;
+            }
+        }
+
+        // Find error/bug logs and try to persist them (avoid duplicates)
+        function tryAutoSaveErrors() {
+            const saved = loadSavedSet();
+            const errorLogs = allLogs.filter(l => (l.level || '').toUpperCase() === 'ERROR');
+            errorLogs.forEach(l => {
+                if (!l.raw) return;
+                if (!saved.has(l.raw)) {
+                    // Attempt send, but don't block UI
+                    saveLogToServer(l).then(ok => {
+                        if (ok) applyFilters();
+                    });
+                }
+            });
+            // also try flushing pending queue
+            flushRemoteQueue();
+        }
+
+        // Attempt automatic flush every 10s
+        setInterval(() => flushRemoteQueue(), 10000);
+
+        // ===== FILTER FUNCTIONS =====
+        function filterByLevel(level) {
+            currentFilter = level;
+            
+            // Update button states
+            document.querySelectorAll('[data-filter]').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-filter="${level}"]`).classList.add('active');
+            
+            applyFilters();
+        }
+
+        function filterByPage() {
+            currentPage = document.getElementById('pageFilter').value;
+            applyFilters();
+        }
+
+        function searchLogs() {
+            currentSearch = document.getElementById('searchInput').value;
+            applyFilters();
+        }
+
+        // ===== ACTION FUNCTIONS =====
+        function refreshLogs() {
+            const indicator = document.getElementById('refreshIndicator');
+            indicator.classList.add('active');
+            
+            setTimeout(() => {
+                loadAllLogs();
+                indicator.classList.remove('active');
+            }, 500);
+        }
+
+        function downloadAllLogs() {
+            try {
+                const content = JSON.stringify(allLogs, null, 2);
+                const blob = new Blob([content], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `kavak_all_logs_${Date.now()}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch (err) {
+                console.error('Failed to download logs', err);
+                alert('Error al descargar los logs');
+            }
+        }
+
+        function clearAllLogs() {
+            if (confirm('¿Estás seguro de que quieres borrar TODOS los logs? Esta acción no se puede deshacer.')) {
+                getLogKeys().forEach(key => {
+                        try {
+                            localStorage.removeItem(key);
+                        } catch (err) {
+                            console.error(`Failed to clear ${key}`, err);
+                        }
+                    });
+                
+                allLogs = [];
+                filteredLogs = [];
+                updateStats();
+                renderLogs();
+            }
+        }
+
+        // ===== LISTEN FOR NEW LOGS =====
+        window.addEventListener('storage', (e) => {
+            if (e.key && e.key.startsWith(LOG_PREFIX)) {
+                refreshLogs();
+            }
+        });
+
+        // ===== AUTO-REFRESH =====
+        setInterval(() => {
+            loadAllLogs();
+        }, 5000); // Refresh every 5 seconds
+
+        // ===== INITIALIZATION =====
+        window.onload = () => {
+            loadAllLogs();
+        };
+    </script>
+</body>
+</html>

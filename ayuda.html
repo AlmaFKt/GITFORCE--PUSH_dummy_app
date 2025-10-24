@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAVAK — Ayuda</title>
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto, sans-serif;background:linear-gradient(180deg,#f6f7f8 0%,#eef2f4 100%);min-height:100vh;color:#0f1720}
+        .header{background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);padding:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:sticky;top:0;z-index:100}
+        .nav-container{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:32px;font-weight:900;color:#062a4f;letter-spacing:-1px;text-decoration:none}
+        .nav-links{display:flex;gap:35px;align-items:center}
+        .nav-links a{text-decoration:none;color:#16324a;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .2s}
+        .nav-links a:hover{background:rgba(6,42,79,0.04);transform:translateY(-2px)}
+        .btn-login{background:linear-gradient(135deg,#00d4aa 0%,#00a88f 100%);color:white;padding:12px 28px;border-radius:12px;border:none;cursor:pointer;font-weight:700;text-decoration:none}
+
+        .container{max-width:1100px;margin:26px auto;padding:20px}
+        .hero{background:linear-gradient(135deg,#0b533b 0%,#084733 60%,#062a4f 100%);color:#fff;padding:40px 20px;border-radius:12px;margin-bottom:18px}
+        .hero h1{font-size:26px;margin-bottom:6px}
+        .hero p{opacity:0.9}
+
+        .card{background:#fff;border-radius:10px;padding:18px;margin-bottom:14px;box-shadow:0 8px 24px rgba(6,42,79,0.06)}
+        .card h3{font-size:16px;color:#062a4f;margin-bottom:8px}
+        .card p{color:#334155;font-size:14px;line-height:1.5}
+
+        .faq-item{margin-bottom:10px}
+        .faq-q{font-weight:700;color:#0b3a2f;cursor:pointer;padding:10px;border-radius:8px;background:linear-gradient(90deg,#f7fdf9 0%,#ffffff 100%);border:1px solid #e8f3ec}
+        .faq-a{padding:12px 14px;background:#fbfdfb;border-radius:8px;border:1px solid #eef7ee;margin-top:6px;display:none}
+
+        .contact{display:flex;gap:12px;flex-wrap:wrap}
+        .contact .info{flex:1;min-width:220px}
+
+        footer{max-width:1100px;margin:26px auto;padding:18px;text-align:center;color:#6b7280}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav-container">
+            <a class="logo" href="index.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logo');">KAVAK</a>
+            <div class="nav-links">
+                <a href="comprar.html" onclick="if(typeof logAction==='function') logAction('navigation','click_comprar')">Comprar</a>
+                <a href="vender.html" onclick="if(typeof logAction==='function') logAction('navigation','click_vender')">Vender</a>
+                <a href="ayuda.html" onclick="if(typeof logAction==='function') logAction('navigation','click_ayuda')">Ayuda</a>
+                <a href="logs.html" onclick="if(typeof logAction==='function') logAction('navigation','click_logs')">Logs</a>
+                <a class="btn-login" href="login.html" onclick="if(typeof logAction==='function') logAction('navigation','click_login')">Ingresar</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Centro de ayuda</h1>
+            <p>Encuentra respuestas rápidas, guías y formas de contactarnos.</p>
+        </div>
+
+        <div class="card">
+            <h3>Preguntas frecuentes</h3>
+            <div class="faq-item">
+                <div class="faq-q" data-target="a1">¿Cómo puedo recuperar mi contraseña?</div>
+                <div class="faq-a" id="a1">Para recuperar tu contraseña, ve a Ingresar → Recuperar contraseña y sigue las instrucciones. Recibirás un correo con un enlace para restablecerla.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-target="a2">¿Cómo reporto un problema con una publicación?</div>
+                <div class="faq-a" id="a2">Abre la publicación del auto y usa la opción 'Reportar' o contáctanos vía el formulario abajo. Incluye el ID del vehículo y una breve descripción.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-target="a3">¿Dónde puedo descargar mis facturas?</div>
+                <div class="faq-a" id="a3">En tu perfil, sección 'Compras' encontrarás las órdenes con sus facturas descargables en formato PDF.</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Guía rápida de solución</h3>
+            <p>Si notas que la app no funciona correctamente, prueba estos pasos:</p>
+            <ol style="margin-top:10px;padding-left:20px;color:#334155">
+                <li>Recarga la página (F5) y borra cache si sigue el problema.</li>
+                <li>Revisa si tienes bloqueadores que afecten las peticiones (adblock, privacy extensions).</li>
+                <li>Si el problema es con sincronización de logs, asegúrate de tener el servidor local en <code>http://localhost:3000</code> corriendo.</li>
+                <li>Si persiste, copia el mensaje de error y contáctanos usando el formulario.</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h3>Contacto</h3>
+            <div class="contact">
+                <div class="info">
+                    <strong>Soporte técnico</strong>
+                    <p>soporte@kavak.local</p>
+                    <p>Horario: Lun-Vie 9:00–18:00</p>
+                </div>
+                <div class="info">
+                    <strong>Analistas / Logs</strong>
+                    <p>Para exportar logs: <code>GET /api/logs/export?format=ndjson</code></p>
+                    <p>O descarga desde la UI de Logs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 KAVAK México — Centro de Ayuda
+    </footer>
+
+    <script>
+        // small FAQ toggle + logging
+        document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', function(){
+            const id = this.getAttribute('data-target');
+            const a = document.getElementById(id);
+            if(!a) return;
+            const willOpen = a.style.display !== 'block';
+            a.style.display = willOpen ? 'block' : 'none';
+            // record the user interaction to localStorage logs (same shape used across pages)
+            if (typeof logAction === 'function') {
+                logAction('INFO', 'faq_toggle', { questionId: id, open: willOpen });
+            }
+        }));
+
+        // Logging helper: writes structured logs to localStorage under `kavak_logs_ayuda`.
+        // Compatible shape with other pages so `logs.html` aggregates them automatically.
+        (function(){
+            function ensureKey(key, initial) {
+                try { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(initial)); } catch(e) {}
+            }
+
+            function getOrCreateUser() {
+                try {
+                    let u = localStorage.getItem('kavak_user');
+                    if (!u) { u = 'USR' + Math.random().toString(36).slice(2,8).toUpperCase(); localStorage.setItem('kavak_user', u); }
+                    return u;
+                } catch (e) { return 'USR_UNKNOWN'; }
+            }
+
+            function getOrCreateSession() {
+                try {
+                    let s = localStorage.getItem('kavak_session');
+                    if (!s) { s = 'S' + Date.now().toString(36); localStorage.setItem('kavak_session', s); }
+                    return s;
+                } catch (e) { return 'SESSION_UNKNOWN'; }
+            }
+
+            window.logAction = function(levelOrType, action, metadata){
+                try {
+                    // accept either a level ('ERROR'|'WARNING'|'INFO') as first arg or an arbitrary type
+                    const level = (['ERROR','WARNING','INFO'].includes(levelOrType) ? levelOrType : 'INFO');
+                    const message = (typeof action === 'string') ? action : JSON.stringify(action);
+                    const now = new Date().toISOString();
+                    const log = {
+                        timestamp: now,
+                        level: level,
+                        service: 'help-service',
+                        userId: getOrCreateUser(),
+                        sessionId: getOrCreateSession(),
+                        message: message,
+                        metadata: metadata || {},
+                        page: 'ayuda',
+                        raw: `${now}|help-service|${level}|${message}`
+                    };
+
+                    const KEY = 'kavak_logs_ayuda';
+                    ensureKey(KEY, []);
+                    const arr = JSON.parse(localStorage.getItem(KEY) || '[]');
+                    arr.push(log);
+                    localStorage.setItem(KEY, JSON.stringify(arr));
+
+                    // small signal for the admin UI or other tabs (storage event won't fire in same tab)
+                    try { localStorage.setItem('kavak_last_log_signal', JSON.stringify({page:'ayuda',ts:Date.now()})); localStorage.removeItem('kavak_last_log_signal'); } catch(e){}
+
+                    return log;
+                } catch (e) {
+                    // swallow errors to avoid breaking the page
+                    return null;
+                }
+            };
+
+            // Log that the user opened the help page (non-intrusive info)
+            try { logAction('INFO', 'open_help', { url: location.pathname || 'ayuda.html' }); } catch(e){}
+        })();
+    </script>
+    <!-- BUG INJECTION: ayuda page -->
+    <script>
+        // <<BUG_INJECTION_AYUDA>>
+        (function injectAyudaBugs(){
+            try {
+                const FLAG = 'kavak_injected_bugs_ayuda';
+                if (localStorage.getItem(FLAG)) return;
+                const KEY = 'kavak_logs_ayuda';
+                const now = new Date().toISOString();
+                const logs = [
+                    { timestamp: now, level: 'ERROR', service: 'help-service', userId: 'USR0000', sessionId: 'SESSION_HELP', message: 'Failed to render FAQ list: TypeError reading property', metadata: { section: 'faq' }, page: 'ayuda', raw: `${now}|help-service|ERROR|Failed to render FAQ list` },
+                    { timestamp: new Date(Date.now()-60*1000).toISOString(), level: 'WARNING', service: 'ui-service', userId: 'USR0000', sessionId: 'SESSION_HELP', message: 'Slow response when fetching contact info', metadata: { endpoint: '/api/contact' }, page: 'ayuda', raw: `${new Date(Date.now()-60*1000).toISOString()}|ui-service|WARNING|Slow response fetching contact` },
+                    { timestamp: new Date(Date.now()-2*60*1000).toISOString(), level: 'INFO', service: 'help-service', userId: 'USR0000', sessionId: 'SESSION_HELP', message: 'User opened help center', metadata: { section: 'faq' }, page: 'ayuda', raw: `${new Date(Date.now()-2*60*1000).toISOString()}|help-service|INFO|User opened help center` }
+                ];
+                const existing = JSON.parse(localStorage.getItem(KEY) || '[]');
+                localStorage.setItem(KEY, JSON.stringify(existing.concat(logs)));
+                localStorage.setItem(FLAG, '1');
+                try { localStorage.setItem('kavak_bug_injected_signal', JSON.stringify({page:'ayuda',ts:Date.now()})); localStorage.removeItem('kavak_bug_injected_signal'); } catch(e) {}
+            } catch (e) { console.error('injectAyudaBugs', e); }
+        })();
+    </script>
+</body>
+</html>
